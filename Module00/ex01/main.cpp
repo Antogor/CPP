@@ -2,19 +2,26 @@
 
 void fillContact(Agend *phone){
 		std::string fields[11] = {
-             "Ana",
-             "12345678901",
-             "Abby",
-             "anF",
-             "23005",
-             "an@gg.com",                                                              
-             "6665774",
-             "21/05/30",
-             "Meat",
-             "pink",
-             "is terranplain"
+			"Name: ",
+            "Last name: ",
+            "Nickname: ",
+            "Login: ",
+            "Postal address: ",
+            "Email: ",
+            "Phone number: ",
+            "Birthday date: ",
+            "Favorite meal: ",
+            "Underwear color: ",
+            "Darkest secret: "
  		};
-		phone->add(fields);
+		std::string information[11];
+		for (int i = 0; i < 11; i++){
+			std::cout << fields[i];
+			std::cin >> information[i];
+		}
+		phone->add(information);
+		std::cout << "\n CONTACT SAVED" << std::endl; //Dar color
+		std::cout << std::endl;
 }
 
 int printAgend (Agend phone){
@@ -42,20 +49,26 @@ int printAgend (Agend phone){
 	return l;		
 }
 
-
 int main(){
 	Agend phone;
-	fillContact(&phone);
-	fillContact(&phone);
-	fillContact(&phone);
-	fillContact(&phone);
-	fillContact(&phone);
-	fillContact(&phone);
-	fillContact(&phone);
-	fillContact(&phone);
-	//printAgend(phone);
-	//pedir el numero
-  	phone.search(printAgend(phone));
- 
+	std::string option;
+	int nb;
+
+	std::cout << "WELCOME!" << std::endl;
+	std::cout << "I'm your awosome 80's mobilphone\n\n";
+	while (1) {
+		std::cout << "Select an option:" << std::endl;
+		std::cout << "ADD, SEARCH, EXIT" << std::endl;
+		std::cin >> option;
+		if (option.compare("ADD") == 0)
+			fillContact(&phone);
+		else if (option.compare("SEARCH") == 0)
+  			phone.search(printAgend(phone));
+		else if (option.compare("EXIT") == 0)
+			break ;
+		else
+			std::cout << "I'm a mobilphone from the 80's, i don't undestand this option, sorry\n\n";
+	}
+	std::cout << "BYE! \n";
     return 0;
 }

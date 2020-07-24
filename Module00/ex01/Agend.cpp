@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/08 17:46:32 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/07/23 20:08:32 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/07/24 18:27:36 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,14 +46,13 @@ void Agend::add(std::string fields[11]){
 }
 
 void Agend::search(int nb){
-	if (nb > 8 || nb <= 0 || this->book[nb].data->empty())
+	if (nb > 8 || nb <= 0) //contacto inexistente
 		std::cout << "This contact doesn't exits" << std::endl;
 	else{
-		for (int i = 0; i < 11; i++){
-			std::cout << std::setfill('.');
-			std::cout << information[i] << std::setw(19) << this->book[nb-1].data[i] << std::endl;
-			std::setfill('\0');
+		for (int i = 0; i < 11; i++){ //Dar formato
+			std::cout << information[i] << "..." << this->book[nb-1].data[i] << std::endl;
 		}
 	}
+	std::cout << "\n";
 }
 
