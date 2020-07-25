@@ -1,15 +1,17 @@
-NAME = phone.a
+NAME = phone
 
-CFLAGS = clang++ -I -Wall -Wextra -Werror
+INCLUDES = Contact.hpp Agend.hpp
 
-FUN = main.cpp Contact.cpp #./Agend.cpp
+CFLAGS = clang++ -Wall -Wextra -Werror
+
+FUN = main.cpp Contact.cpp Agend.cpp
 
 OBJ = $(FUN:.cpp=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ) Contact.hpp
-	@$(CFLAGS) $(FUN) -o $(NAME) $(OBJ)
+$(NAME): $(OBJ) $(INCLUDES) 
+	@$(CFLAGS) $(FUN) -o $(NAME)
 
 clean:
 	@rm -f $(OBJ)
