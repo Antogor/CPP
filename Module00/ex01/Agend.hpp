@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/08 17:02:56 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/07/25 12:06:20 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/07/27 17:01:35 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ class Agend
 			void add(std::string fields[11]); //Fill the arry with objects contacs
 			void search(int nb);
 			void printInf(int i);
+			void printFormat(int i);
 };
 #endif

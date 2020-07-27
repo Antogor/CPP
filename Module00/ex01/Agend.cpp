@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/08 17:46:32 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/07/25 13:11:36 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/07/27 18:40:50 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,21 +43,23 @@ void Agend::add(std::string fields[11]){
 }
 
 void Agend::search(int nb){
-	if (nb > 8 || nb <= 0 || book[nb-1].getData(0).empty())
-		std::cout << "This contact doesn't exits" << std::endl;
+	if (nb < 1 || nb > 8 || book[nb-1].getData(0).empty())
+		std::cout << "This contact doesn't exist" << std::endl;
 	else{
 		for (int i = 0; i < 11; i++){
-			printInf(i);
-		//	std::cout << std::setfill('.');
-			std::cout << std::setiosflags(std::ios::right);
-			std::cout << std::setw(10);
-			std::cout << book[nb-1].getData(i) /*<< std::setw(15)*/ << std::endl;
+			printFormat(i);
+			std::cout << book[nb-1].getData(i) << std::endl;
 		}
 	}
 	std::cout << "\n";
 }
 
 void Agend::printInf(int i){
-		std::cout << inf[i];
+	std::cout << inf[i] << "\n";
+}
+
+void Agend::printFormat(int i){
+	std::cout.width(18);
+	std::cout << std::left << inf[i];
 }
 
