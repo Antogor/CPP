@@ -9,10 +9,6 @@ void fillContact(Agend *phone){
 			if (!information[i].empty())
 				i++;
 		}
-//		for (int i = 0; i < 11; i++){
-//			phone->printInf(i);
-//			std::getline(std::cin, information[i]);
-//		}
 		phone->add(information);
 		std::cout << "\n CONTACT SAVED" << std::endl;
 		std::cout << std::endl;
