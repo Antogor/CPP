@@ -2,10 +2,17 @@
 
 void fillContact(Agend *phone){
 		std::string information[11];
-		for (int i = 0; i < 11; i++){
+		int i = 0;
+		while (i < 11){
 			phone->printInf(i);
-			std::cin >> information[i];
+			std::getline(std::cin, information[i]);
+			if (!information[i].empty())
+				i++;
 		}
+//		for (int i = 0; i < 11; i++){
+//			phone->printInf(i);
+//			std::getline(std::cin, information[i]);
+//		}
 		phone->add(information);
 		std::cout << "\n CONTACT SAVED" << std::endl;
 		std::cout << std::endl;
@@ -27,7 +34,7 @@ void printMenu(){
 }
 
 int printAgend (Agend phone){
-	int l;
+	char l;
 	printMenu();
 	for (int i = 0; i < 8; i++){
 		std::cout.width(1);
@@ -55,7 +62,8 @@ int printAgend (Agend phone){
 	}
 	std::cout << '\n' << "Select contact to see more information" << std::endl;
 	std::cin >> l;
-	return l;		
+	std::cin.ignore();
+	return l - '0';		
 }
 
 int main(){
@@ -67,7 +75,7 @@ int main(){
 	while (1) {
 		std::cout << "Select an option:" << std::endl;
 		std::cout << "ADD, SEARCH, EXIT" << std::endl;
-		std::cin >> option;
+		std::getline(std::cin, option);
 		if (option.compare("ADD") == 0 || option.compare("add") == 0)
 			fillContact(&phone);
 		else if (option.compare("SEARCH") == 0 || option.compare("search") == 0)
