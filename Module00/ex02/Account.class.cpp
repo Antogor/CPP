@@ -1,10 +1,12 @@
 #include "Account.class.hpp"
 #include <iostream>
+#include <chrono>
 
 int Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;
 int Account::_totalNbDeposits = 0;
 int Account::_totalNbWithdrawals = 0;
+static int _count = 0;
 
 Account::Account(int initial_deposit){
 	this->_amount = initial_deposit;
@@ -96,6 +98,7 @@ bool Account::makeWithdrawal(int withdrawal){
 }
 
 int Account::checkAmount()const{
+	_count++;
 	if (this->_amount < 0)
 		return 0;
 	return this->_amount;
@@ -110,4 +113,17 @@ void Account::displayStatus() const{
 }
 
 void Account::_displayTimestamp(void){
+	std::time_t tt;
+    struct tm t;
+
+    tt = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
+    t = *localtime(&tt);
+    std::cout << "[";
+    std::cout << (t.tm_year + 1900);
+    std::cout << t.tm_mon;
+    std::cout << t.tm_mday << "_";
+    std::cout << t.tm_hour;
+    std::cout << t.tm_min;
+    std::cout << t.tm_sec;
+    std::cout << "] ";
 }

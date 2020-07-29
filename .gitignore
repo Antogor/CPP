@@ -2,3 +2,7 @@
 *.swp
 a.out
 *.gch
+clock.cpp
+*.log
+Account.class.hpp
+tests.cpp
