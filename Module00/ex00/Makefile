@@ -3,7 +3,7 @@ CFLAGS = clang++ -Wall -Wextra -Werror
 
 FUN = megaphone.cpp
 
-OBJ = $(FUN: .cpp=.o)
+OBJ = $(FUN:.cpp=.o)
 
 all: $(NAME)
 
