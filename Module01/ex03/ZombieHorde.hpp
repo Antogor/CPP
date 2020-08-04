@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   ZombieHorde.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/31 16:45:20 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/08/04 11:47:50 by agarzon-         ###   ########.fr       */
+/*   Created: 2020/08/04 11:54:14 by agarzon-          #+#    #+#             */
+/*   Updated: 2020/08/04 14:25:34 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
-#include <string>
-#include <iostream>
+#ifndef ZOMBIEHORDE_HPP
+# define ZOMBIEHORDE_HPP
+# include "Zombie.hpp"
 
-class Zombie
-{
+
+class ZombieHorde{
+
 	private:
-			std::string type;
-			std::string name;
+			Zombie *horde;
+			int n;
 	public:
-			Zombie();
-			Zombie(std::string n, std::string t);
-			~Zombie();
+			ZombieHorde(int n);
+			~ZombieHorde();
 			void announce();
-			static std::string randomName(std::string::size_type len); 
+
+
 };
+
 
 #endif

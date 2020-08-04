@@ -1,31 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/31 16:45:20 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/08/04 11:47:50 by agarzon-         ###   ########.fr       */
+/*   Created: 2020/08/04 11:58:06 by agarzon-          #+#    #+#             */
+/*   Updated: 2020/08/04 14:39:18 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
-#include <string>
-#include <iostream>
+#include "ZombieHorde.hpp"
 
-class Zombie
-{
-	private:
-			std::string type;
-			std::string name;
-	public:
-			Zombie();
-			Zombie(std::string n, std::string t);
-			~Zombie();
-			void announce();
-			static std::string randomName(std::string::size_type len); 
-};
+int main(void){
+	ZombieHorde z = ZombieHorde(3);
+	z.announce();
 
-#endif
+	return (0);
+}
