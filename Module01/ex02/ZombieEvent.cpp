@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/31 16:58:32 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/08/04 11:48:16 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/08/18 17:51:11 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ Zombie *ZombieEvent::newZombie(std::string name){
 }
 
 Zombie *ZombieEvent::randomChump(){
-	Zombie *ramdon = new Zombie(Zombie::randomName(6), type);
+	Zombie *ramdon = new Zombie(Zombie::randomName(6), this->type);
 	ramdon->announce();
 	return ramdon;
 }

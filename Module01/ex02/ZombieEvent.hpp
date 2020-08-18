@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/31 16:51:44 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/08/04 11:47:20 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/08/18 17:47:02 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class ZombieEvent
 			std::string type;
 	public:
 			ZombieEvent();
-			~ZombieEvent();
+			virtual ~ZombieEvent();
 			void setZombieType(std::string type);
 			Zombie *newZombie(std::string name);
 			Zombie *randomChump();

@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/31 16:48:13 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/08/04 11:46:47 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/08/18 18:01:17 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,3 +38,7 @@ std::string Zombie::randomName(std::string::size_type len){
     return s;
 }
 
+void Zombie::setZombie(std::string name, std::string type){
+	this->name = name;
+	this->type = type;
+}

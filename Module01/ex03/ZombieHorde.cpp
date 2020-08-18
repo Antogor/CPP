@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/04 14:14:38 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/08/04 14:39:09 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/08/18 18:03:22 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ ZombieHorde::ZombieHorde(int n){
 	{
 		horde = new Zombie[n];
 		for (int i = 0; i < n; i++)
-			horde[i] = Zombie(Zombie::randomName(3), "horde");
+			horde[i].setZombie(Zombie::randomName(3), "horde");
 		std::cout << "The dead are rising" << std::endl;
 	}
 }

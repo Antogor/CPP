@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/31 16:45:20 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/08/04 11:47:50 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/08/18 17:55:14 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,10 @@ class Zombie
 	public:
 			Zombie();
 			Zombie(std::string n, std::string t);
-			~Zombie();
+			virtual ~Zombie();
 			void announce();
-			static std::string randomName(std::string::size_type len); 
+			static std::string randomName(std::string::size_type len);
+			void setZombie(std::string name, std::string type);
 };
 
 #endif

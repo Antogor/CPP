@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/31 17:49:20 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/08/04 11:52:27 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/08/18 17:57:34 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,14 @@ void zombieBattle()
 		Zombie harmless[4];
 
 		for (int i = 0; i < 4; i++){
-			dangerous[i] = Zombie(Zombie::randomName(3), "dangerous");
-			harmless[i] = Zombie(Zombie::randomName(4), "harmless");
+			dangerous[i].setZombie(Zombie::randomName(3), "dangerous");
+			harmless[i].setZombie(Zombie::randomName(4), "harmless");
 		}
 		for (int i = 0; i < 4; i++){
 			dangerous[i].announce();
 			harmless[i].announce();
 		}
+		std::cout << "End of the zombie battle" << std::endl;
 }
 
 int main (void){
