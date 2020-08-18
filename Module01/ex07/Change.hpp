@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 20:07:33 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/08/18 10:24:31 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/08/18 17:11:01 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <string>
 # include <fstream>
 # include <sstream>
+#include <iostream>
 
 class Change{
 	private:

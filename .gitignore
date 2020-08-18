@@ -3,3 +3,5 @@
 a.out
 *.gch
 clock.cpp
+*.replace
+replace
