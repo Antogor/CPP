@@ -6,27 +6,16 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 13:09:25 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/08/31 14:30:44 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/08/31 15:56:52 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SCAVTRAP_HPP
 # define SCAVTRAP_HPP
-# include <iostream>
-# include <string>
-
-class ScavTrap{
+# include "ClapTrap.hpp"
+class ScavTrap : public ClapTrap{
 
 	private:
-			int hit;
-        	int maxHit;
-          	int energy;
-          	int maxEnergy;
-          	int level;
-          	std::string name;
-          	int melee;
-          	int ranged;
-          	int armor;
 			std::string challenges[5];
 	public:
           	ScavTrap(std::string name);
@@ -35,8 +24,6 @@ class ScavTrap{
           	ScavTrap &operator=(const ScavTrap &s);
           	int rangedAttack(std::string const &target);
           	int meleeAttack(std::string const &target);
-          	void takeDamage(unsigned int amount);
-          	void beRepaired(unsigned int amount);
 			void challengeNewcomer(void);
 };
 
