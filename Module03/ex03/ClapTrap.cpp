@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 14:16:43 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/08/31 17:21:45 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/08/31 17:22:05 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,4 +93,8 @@ void ClapTrap::beRepaired(unsigned int amount){
 			this->hit = this->maxHit;
 	}
 	std::cout << "Diagnosis: " << this->hit << " remaining hit points\n" << std::endl;
+}
+
+std::string ClapTrap::getName(){
+	return this->name;
 }

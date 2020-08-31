@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 09:59:49 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/08/31 15:53:53 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/08/31 17:20:54 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,6 @@ int FragTrap::vaulthunter_dot_exe(const std::string &target){
 					<< " causing " << finalDamage
 					<< " points of damage!" << std::endl;
 	}
-	std::cout << "Diagnosis: " << this->energy << " reamining energy points\n" << std::endl;	
+	std::cout << "Diagnosis: " << this->energy << " remaining energy points\n" << std::endl;	
 	return finalDamage;
 }

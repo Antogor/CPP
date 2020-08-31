@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 09:59:49 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/08/31 13:58:14 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/08/31 17:19:48 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ void FragTrap::takeDamage(unsigned int amount){
 		std::cout << "FR4G-TP " << this->name << " receive "
 					<< amount << " points of damage" << std::endl;
 	}
-	std::cout << "Diagnosis: " << this->hit << " reamining hit points\n" << std::endl;
+	std::cout << "Diagnosis: " << this->hit << " remaining  hit points\n" << std::endl;
 }
 
 void FragTrap::beRepaired(unsigned int amount){
@@ -107,7 +107,7 @@ void FragTrap::beRepaired(unsigned int amount){
 		if (this->hit > this->maxHit)
 			this->hit = this->maxHit;
 	}
-	std::cout << "Diagnosis: " << this->hit << " reamining hit points\n" << std::endl;
+	std::cout << "Diagnosis: " << this->hit << " remaining  hit points\n" << std::endl;
 }
 
 int FragTrap::vaulthunter_dot_exe(const std::string &target){
@@ -128,6 +128,6 @@ int FragTrap::vaulthunter_dot_exe(const std::string &target){
 					<< " causing " << finalDamage
 					<< " points of damage!" << std::endl;
 	}
-	std::cout << "Diagnosis: " << this->energy << " reamining energy points\n" << std::endl;	
+	std::cout << "Diagnosis: " << this->energy << " remaining  energy points\n" << std::endl;	
 	return finalDamage;
 }

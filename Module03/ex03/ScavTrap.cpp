@@ -6,21 +6,16 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 13:16:29 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/08/31 17:20:42 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/08/31 16:54:42 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
+#include "ClapTrap.hpp"
 
-ScavTrap::ScavTrap(std::string name){
-	this->name = name;
-	this->hit = 100;
-	this->maxHit = 100;
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name){
 	this->energy = 50;
 	this->maxEnergy = 50;
-	this->level = 1;
-	this->melee = 20;
-	this->ranged = 15;
 	this->armor = 3;
 	this->challenges[0] = "I will prove to you my robotic superiority!";
 	this->challenges[1] = "Dance battle! Or, you know...regular battle";
@@ -34,7 +29,7 @@ ScavTrap::~ScavTrap(){
 	std::cout << this->name << ": Robot down!!!" << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap &s){
+ScavTrap::ScavTrap(const ScavTrap &s) : ClapTrap(s.name){
 	*this = s;
 }
 
@@ -68,46 +63,6 @@ int ScavTrap::meleeAttack(const std::string &target){
 	            << " at melee, causing " << this->melee
 	            << " points of damage!\n" << std::endl;
 	return this->melee;
-}
-
-void ScavTrap::takeDamage(unsigned int amount){
-	if (amount > this->armor){
-	    amount -= this->armor;
-	    std::cout << this->name << ": Ahg! My assets" << std::endl;
-	}
-	else{
-	    amount = 0;
-	    std::cout << this->name << ": Hahahahaha I'm alive!" << std::endl;
-	}
-	if (amount >= this->maxHit){
-	    this->hit = 0;
-	    std::cout << this->name << ": Extra ouch!" << std::endl;
-	}
-	else{
-	    this->hit -= amount;
-	    if (this->hit < 0)
-	        this->hit = 0;
-	    std::cout << "SC4V-TP " << this->name << " receive "
-	                << amount << " points of damage" << std::endl;
-	}
-	std::cout << "Diagnosis: " << this->hit << " remaining hit points\n" << std::endl;
-}
-
-void ScavTrap::beRepaired(unsigned int amount){
-	if (amount > this->maxHit){
-	    std::cout << this->name << ": I'm too pretty to die!" << std::endl;
-	    std::cout << "SC4V-TP " << this->name << " recovers "
-	                << amount << " hit points" << std::endl;
-	    this->hit = this->maxHit;
-	}
-	else{
-	    this->hit += amount;
-	    std::cout << "SC4V-TP " << this->name << " recovers "
-	                << amount << " hit points" << std::endl;
-	    if (this->hit > this->maxHit)
-	        this->hit = this->maxHit;
-	}
-	std::cout << "Diagnosis: " << this->hit << " remaining hit points\n" << std::endl;
 }
 
 void ScavTrap::challengeNewcomer(){
