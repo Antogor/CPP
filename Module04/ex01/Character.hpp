@@ -1,36 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Victim.hpp                                         :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/01 12:36:34 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/01 13:18:18 by agarzon-         ###   ########.fr       */
+/*   Created: 2020/09/01 14:38:16 by agarzon-          #+#    #+#             */
+/*   Updated: 2020/09/01 16:16:52 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef VICTIM_HPP
-# define VICTIM_HPP
+#ifndef CHARACTER_HPP
+# define CHARACTER_HPP
+# include "Enemy.hpp"
+# include "AWeapon.hpp"
 #include <ostream>
-# include <string>
-# include <iostream>
 
-class Victim
+class Character
 {
 	private:
-			Victim();
-	protected:
+			Character();
 			std::string name;
+			int ap;
+			AWeapon *weapon;
 	public:
-			Victim(std::string const &name);
-			virtual ~Victim();
-			Victim(Victim const &v);
-			Victim &operator=(Victim const &v);
+			Character(std::string const & name);
+			Character(Character const &c);
+			~Character();
+
+			Character &operator=(Character const &c);
+
+			void recoverAP();
+			void equip(AWeapon *weapon);
+			void attack(Enemy *enemy);
+
 			std::string const &getName() const;
-			virtual void getPolymorphed() const;
+			int getAp() const;
+			AWeapon *getWeapon() const;
 };
 
-	std::ostream &operator<<(std::ostream &out, Victim const &v);
+	std::ostream &operator<<(std::ostream &out, Character const &c);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 12:41:17 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/01 12:59:29 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/01 13:18:46 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ Victim &Victim::operator=(const Victim &v){
 	return *this;
 }
 
-std::string Victim::getName() const{
+std::string const &Victim::getName() const{
 	return this->name;
 }
 

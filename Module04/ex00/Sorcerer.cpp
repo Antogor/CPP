@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 12:17:16 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/01 12:53:18 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/01 13:19:40 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ Sorcerer &Sorcerer::operator=(const Sorcerer &s){
 	return *this;
 }
 
-std::string Sorcerer::getName() const{
+std::string const &Sorcerer::getName() const{
 	return this->name;
 }
 
@@ -43,7 +43,7 @@ void Sorcerer::polymorph(const Victim &v) const{
 	v.getPolymorphed();	
 }
 
-std::string Sorcerer::getTitle() const{
+std::string const &Sorcerer::getTitle() const{
 	return this->title;
 }
 

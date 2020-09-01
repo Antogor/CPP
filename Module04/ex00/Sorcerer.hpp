@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 11:54:09 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/01 12:50:26 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/01 13:19:11 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ class Sorcerer
 			~Sorcerer();
 			Sorcerer(Sorcerer const &s);
 			Sorcerer &operator=(Sorcerer const &s);
-			std::string getName() const;
-			std::string getTitle() const;
+			std::string const &getName() const;
+			std::string const &getTitle() const;
 			void polymorph(Victim const &v) const;
 };
 
