@@ -6,14 +6,14 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 09:59:49 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/08/31 17:22:13 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/01 10:42:34 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 #include "ClapTrap.hpp"
 
-FragTrap::FragTrap(std::string name)
+FragTrap::FragTrap(std::string const &name)
 		: ClapTrap(name){
 	this->melee = 30;
 	this->ranged = 20;

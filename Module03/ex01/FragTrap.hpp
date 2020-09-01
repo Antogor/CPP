@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 09:47:33 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/08/31 12:52:04 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/01 10:49:26 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class FragTrap
 			int armor;
 			std::string attacks[5];
 	public:
-			FragTrap(std::string name);
+			FragTrap(std::string const &name);
 			~FragTrap();
 			FragTrap(const FragTrap &f);
 			FragTrap &operator=(const FragTrap &f);

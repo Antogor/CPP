@@ -6,14 +6,13 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 14:16:43 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/08/31 17:22:05 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/01 10:52:39 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string name){
-	this->name = name;
+ClapTrap::ClapTrap(std::string const &name) : name (name){
 	this->hit = 100;
 	this->maxHit = 100;
 	this->energy = 100;

@@ -6,14 +6,13 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 09:59:49 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/08/31 17:20:26 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/01 10:51:52 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(std::string name){
-	this->name = name;
+FragTrap::FragTrap(std::string const &name) : name(name){
 	this->hit = 100;
 	this->maxHit = 100;
 	this->energy = 100;

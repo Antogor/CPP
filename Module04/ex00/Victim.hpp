@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   Victim.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/31 13:09:25 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/01 10:43:02 by agarzon-         ###   ########.fr       */
+/*   Created: 2020/09/01 12:36:34 by agarzon-          #+#    #+#             */
+/*   Updated: 2020/09/01 12:59:17 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
-# include "ClapTrap.hpp"
-class ScavTrap : public ClapTrap{
+#ifndef VICTIM_HPP
+# define VICTIM_HPP
+#include <ostream>
+# include <string>
+# include <iostream>
 
+class Victim
+{
 	private:
-			std::string challenges[5];
+			Victim();
+	protected:
+			std::string name;
 	public:
-          	ScavTrap(std::string const &name);
-          	~ScavTrap();
-          	ScavTrap(const ScavTrap &s);
-          	ScavTrap &operator=(const ScavTrap &s);
-          	int rangedAttack(std::string const &target);
-          	int meleeAttack(std::string const &target);
-			void challengeNewcomer(void);
+			Victim(std::string const &name);
+			virtual ~Victim();
+			Victim(Victim const &v);
+			Victim &operator=(Victim const &v);
+			std::string getName() const;
+			virtual void getPolymorphed() const;
 };
 
+	std::ostream &operator<<(std::ostream &out, Victim const &v);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 13:09:25 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/08/31 14:30:44 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/01 10:50:00 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class ScavTrap{
           	int armor;
 			std::string challenges[5];
 	public:
-          	ScavTrap(std::string name);
+          	ScavTrap(std::string const &name);
           	~ScavTrap();
           	ScavTrap(const ScavTrap &s);
           	ScavTrap &operator=(const ScavTrap &s);

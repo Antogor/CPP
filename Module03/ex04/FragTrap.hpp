@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/31 13:09:25 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/01 10:43:02 by agarzon-         ###   ########.fr       */
+/*   Created: 2020/08/31 09:47:33 by agarzon-          #+#    #+#             */
+/*   Updated: 2020/09/01 10:30:56 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 # include "ClapTrap.hpp"
-class ScavTrap : public ClapTrap{
 
+class FragTrap : virtual public ClapTrap
+{
 	private:
-			std::string challenges[5];
+			std::string attacks[5];
 	public:
-          	ScavTrap(std::string const &name);
-          	~ScavTrap();
-          	ScavTrap(const ScavTrap &s);
-          	ScavTrap &operator=(const ScavTrap &s);
-          	int rangedAttack(std::string const &target);
-          	int meleeAttack(std::string const &target);
-			void challengeNewcomer(void);
+			FragTrap(std::string const &name);
+			~FragTrap();
+			FragTrap(const FragTrap &f);
+			FragTrap &operator=(const FragTrap &f);
+			int rangedAttack(std::string const &target);
+			int meleeAttack(std::string const &target);
+			int vaulthunter_dot_exe(std::string const &target);
 };
-
 
 #endif

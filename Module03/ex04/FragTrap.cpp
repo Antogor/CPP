@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 09:59:49 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/01 10:47:50 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/01 10:30:59 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ FragTrap &FragTrap::operator=(const FragTrap &f){
 
 int FragTrap::rangedAttack(const std::string &target){
 	std::cout << this->name << ": Hyah!" << std::endl; 
-	std::cout << "FR4G-TP " << name
+	std::cout << "FR4G-TP " << this->name
 				<< " attacks " << target
 				<< " at range, causing " << this->ranged
 				<< " points of damage!\n" << std::endl;	

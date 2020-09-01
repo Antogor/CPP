@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   SuperTrap.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/31 13:09:25 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/01 10:43:02 by agarzon-         ###   ########.fr       */
+/*   Created: 2020/08/31 17:29:18 by agarzon-          #+#    #+#             */
+/*   Updated: 2020/09/01 10:38:42 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef SUPERTRAP_HPP
+# define SUPERTRAP_HPP
+# include "FragTrap.hpp"
+# include "NinjaTrap.hpp"
 # include "ClapTrap.hpp"
-class ScavTrap : public ClapTrap{
 
-	private:
-			std::string challenges[5];
+class SuperTrap : public NinjaTrap, public FragTrap
+{
 	public:
-          	ScavTrap(std::string const &name);
-          	~ScavTrap();
-          	ScavTrap(const ScavTrap &s);
-          	ScavTrap &operator=(const ScavTrap &s);
-          	int rangedAttack(std::string const &target);
-          	int meleeAttack(std::string const &target);
-			void challengeNewcomer(void);
+			SuperTrap(std::string const &name);
+			~SuperTrap();
+			SuperTrap(SuperTrap const &sup);
+			SuperTrap &operator=(SuperTrap const &sup);
+			int rangedAttack(std::string const &target);
+			int meleeAttack(std::string const &target);
 };
-
 
 #endif

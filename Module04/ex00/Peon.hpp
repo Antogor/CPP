@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   Peon.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/31 09:47:33 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/01 10:42:22 by agarzon-         ###   ########.fr       */
+/*   Created: 2020/09/01 12:54:28 by agarzon-          #+#    #+#             */
+/*   Updated: 2020/09/01 13:10:55 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
-# include "ClapTrap.hpp"
+#ifndef PEON_HPP
+# define PEON_HPP
+# include "Victim.hpp"
 
-class FragTrap : public ClapTrap
+class Peon : public Victim
 {
 	private:
-			std::string attacks[5];
+			Peon();
 	public:
-			FragTrap(std::string const &name);
-			~FragTrap();
-			FragTrap(const FragTrap &f);
-			FragTrap &operator=(const FragTrap &f);
-			int rangedAttack(std::string const &target);
-			int meleeAttack(std::string const &target);
-			int vaulthunter_dot_exe(std::string const &target);
+			Peon(std::string const &name);
+			~Peon();
+			Peon(Peon const &p);
+			Peon &operator=(Peon const &p);
+			void getPolymorphed() const;
 };
 
 #endif

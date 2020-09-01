@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 14:11:25 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/08/31 14:30:03 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/01 10:47:09 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class ClapTrap
 			int ranged;
 			int armor;
 	public:
-			ClapTrap(std::string name);
+			ClapTrap(std::string const &name);
 			virtual ~ClapTrap();
 			ClapTrap(const ClapTrap &c);
 			ClapTrap &operator=(const ClapTrap &c);
