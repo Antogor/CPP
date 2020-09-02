@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 16:25:34 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/01 17:08:06 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/02 18:43:15 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,22 +54,36 @@ int main(){
 	std::cout << "Total Damage " << me->getWeapon()->getDamage() << std::endl;
 	std::cout << *me;
 	me->attack(sp1);
-	std::cout << "HP remaining " << sp1->getHP() << std::endl;
+	std::cout << "SP1 HP remaining " << sp1->getHP() << std::endl;
 	std::cout << *me;
+	std::cout << "---------------------------------------\n" << std::endl;
 
-	Enemy *sp2 = new SuperMutant();
-	sp2 = sp1;
+	SuperMutant sp2;
+	std::cout << "SP2 HP remaining " << sp2.getHP() << std::endl;
+	sp2.takeDamage(50);
+	std::cout << "SP2 HP remaining " << sp2.getHP() << std::endl;
+	SuperMutant sp3(sp2);
+	std::cout << "SP3 HP remaining " << sp3.getHP() << std::endl;
+	sp2.takeDamage(50);
+	std::cout << "SP2 HP remaining " << sp2.getHP() << std::endl;
+	std::cout << "SP3 HP remaining " << sp3.getHP() << std::endl;
+	sp3.takeDamage(50);
+	std::cout << "SP2 HP remaining " << sp2.getHP() << std::endl;
+	std::cout << "SP3 HP remaining " << sp3.getHP() << std::endl;
 
-	std::cout << "HP remaining " << sp2->getHP() << std::endl;
-	me->equip(pr);
-	std::cout << *me;
-
-	me->attack(sp2);
-	std::cout << "HP remaining " << sp2->getHP() << std::endl;
-	std::cout << *me;
-
+	std::cout << "---------------------------------------\n" << std::endl;
 	me->attack(sp1);
-	std::cout << "HP remaining " << sp1->getHP() << std::endl;
+	std::cout << "SP1 HP remaining " << sp1->getHP() << std::endl;
 	std::cout << *me;
+	me->attack(sp1);
+	std::cout << "SP1 HP remaining " << sp1->getHP() << std::endl;
+	std::cout << *me;
+
+	std::cout << "---------------------------------------\n" << std::endl;
+	delete me;
+	delete sp1;
+	delete pr;
+	delete pf;
+
 	return 0;
 }

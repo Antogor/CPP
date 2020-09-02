@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 12:17:16 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/01 13:19:40 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/02 18:16:13 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ Sorcerer::~Sorcerer(){
 }
 
 Sorcerer::Sorcerer(Sorcerer const &s){
-	*this = s;
+	this->name = s.name;
+	this->title = s.title;
 }
 
 Sorcerer &Sorcerer::operator=(const Sorcerer &s){

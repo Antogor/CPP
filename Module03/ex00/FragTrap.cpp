@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 09:59:49 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/01 10:51:21 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/02 19:33:47 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,21 @@ FragTrap::~FragTrap(){
 }
 
 FragTrap::FragTrap(const FragTrap &f){
-	*this = f;
+	this->name = f.name;
+	this->hit = f.hit;
+	this->maxHit = f.maxHit;
+	this->energy = f.energy;
+	this->maxEnergy = f.maxEnergy;
+	this->level = f.level;
+	this->melee = f.melee;
+	this->ranged = f.ranged;
+	this->armor = f.armor;
+	this->attacks[0] = f.attacks[0];
+	this->attacks[1] = f.attacks[1];
+	this->attacks[2] = f.attacks[2];
+	this->attacks[3] = f.attacks[3];
+	this->attacks[4] = f.attacks[4];
+	std::cout << this->name << ": Booting sequence complete. Hello! I am your new steward bot\n" << std::endl;
 }
 
 FragTrap &FragTrap::operator=(const FragTrap &f){
@@ -47,13 +61,18 @@ FragTrap &FragTrap::operator=(const FragTrap &f){
 	this->melee = f.melee;
 	this->ranged = f.ranged;
 	this->armor = f.armor;
+	this->attacks[0] = f.attacks[0];
+	this->attacks[1] = f.attacks[1];
+	this->attacks[2] = f.attacks[2];
+	this->attacks[3] = f.attacks[3];
+	this->attacks[4] = f.attacks[4];
 
 	return *this;
 }
 
 int FragTrap::rangedAttack(const std::string &target){
 	std::cout << this->name << ": Hyah!" << std::endl; 
-	std::cout << "FR4G-TP " << name
+	std::cout << "FR4G-TP " << this->name
 				<< " attacks " << target
 				<< " at range, causing " << this->ranged
 				<< " points of damage!\n" << std::endl;	

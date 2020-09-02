@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 17:41:18 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/01 10:41:11 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/02 19:43:46 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ SuperTrap::~SuperTrap(){
 	std::cout << "No, nononono NO! Crap!" << std::endl;
 }
 
-SuperTrap::SuperTrap(SuperTrap const &sup) : ClapTrap(sup.name), FragTrap(name), NinjaTrap(name){
-	*this = sup;
+SuperTrap::SuperTrap(SuperTrap const &sup) : ClapTrap(sup), FragTrap(sup), NinjaTrap(sup){
+	std::cout << "Hey everybody! Check out my SUPER package!\n" << std::endl;
 }
 
 SuperTrap &SuperTrap::operator=(const SuperTrap &sup){

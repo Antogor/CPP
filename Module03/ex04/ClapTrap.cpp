@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 14:16:43 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/01 10:53:06 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/02 19:40:23 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,16 @@ ClapTrap::~ClapTrap(){
 }
 
 ClapTrap::ClapTrap(const ClapTrap &c){
-	*this = c;
+	this->name = c.name;
+	this->hit = c.hit;
+	this->maxHit = c.maxHit;
+	this->energy = c.energy;
+	this->maxEnergy = c.maxEnergy;
+	this->level = c.level;
+	this->melee = c.melee;
+	this->ranged = c.ranged;
+	this->armor = c.armor;
+	std::cout << "ClapTrap activated\n" << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &c){

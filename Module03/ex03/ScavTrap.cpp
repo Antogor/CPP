@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 13:16:29 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/01 10:43:16 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/02 19:32:53 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,13 @@ ScavTrap::~ScavTrap(){
 	std::cout << this->name << ": Robot down!!!" << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap &s) : ClapTrap(s.name){
-	*this = s;
+ScavTrap::ScavTrap(const ScavTrap &s) : ClapTrap(s){
+	this->challenges[0] = s.challenges[0];
+	this->challenges[1] = s.challenges[1];
+	this->challenges[2] = s.challenges[2];
+	this->challenges[3] = s.challenges[3];
+	this->challenges[4] = s.challenges[4];
+	std::cout << this->name << ": Let's get this party started\n" << std::endl;
 }
 
 ScavTrap &ScavTrap::operator=(const ScavTrap &s){
@@ -43,6 +48,11 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &s){
 	this->melee = s.melee;
 	this->ranged = s.ranged;
 	this->armor = s.armor;
+	this->challenges[0] = s.challenges[0];
+	this->challenges[1] = s.challenges[1];
+	this->challenges[2] = s.challenges[2];
+	this->challenges[3] = s.challenges[3];
+	this->challenges[4] = s.challenges[4];
 	
 	return *this;
 }

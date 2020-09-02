@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 16:21:42 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/01 10:44:22 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/02 19:36:13 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ NinjaTrap::~NinjaTrap(){
 	std::cout << "The ninja has to disappeared" << std::endl;
 }
 
-NinjaTrap::NinjaTrap(NinjaTrap const &n) : ClapTrap(n.name){
-	*this = n;	
+NinjaTrap::NinjaTrap(NinjaTrap const &n) : ClapTrap(n){
+	std::cout << "Here comes the ninja\n" << std::endl;
 }
 
 NinjaTrap &NinjaTrap::operator=(const NinjaTrap &n){

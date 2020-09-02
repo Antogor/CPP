@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 14:10:31 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/01 14:30:32 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/02 18:20:02 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ Enemy::~Enemy(){
 }
 
 Enemy::Enemy(Enemy const &e){
-	*this = e;
+	this->hp = e.hp;
+	this->type = e.type;
 }
 
 Enemy &Enemy::operator=(const Enemy &e){

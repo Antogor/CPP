@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 09:59:49 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/01 10:47:50 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/02 19:32:41 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,14 @@ FragTrap::~FragTrap(){
 	std::cout << this->name << ": Don't forget me!" << std::endl;
 }
 
-FragTrap::FragTrap(const FragTrap &f) : ClapTrap(f.name){
-	*this = f;
+FragTrap::FragTrap(const FragTrap &f) : ClapTrap(f){
+	std::cout << this->name << ": Booting sequence complete. Hello! I am your new steward bot\n" << std::endl;
+	this->attacks[0] = f.attacks[0];
+	this->attacks[1] = f.attacks[1];
+	this->attacks[2] = f.attacks[2];
+	this->attacks[3] = f.attacks[3];
+	this->attacks[4] = f.attacks[4];
+
 }
 
 FragTrap &FragTrap::operator=(const FragTrap &f){
@@ -43,6 +49,11 @@ FragTrap &FragTrap::operator=(const FragTrap &f){
 	this->melee = f.melee;
 	this->ranged = f.ranged;
 	this->armor = f.armor;
+	this->attacks[0] = f.attacks[0];
+	this->attacks[1] = f.attacks[1];
+	this->attacks[2] = f.attacks[2];
+	this->attacks[3] = f.attacks[3];
+	this->attacks[4] = f.attacks[4];
 
 	return *this;
 }

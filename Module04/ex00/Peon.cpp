@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 13:00:08 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/01 13:12:07 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/02 18:16:52 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,7 @@ Peon::~Peon(){
 	std::cout << "Bleuark..." << std::endl;
 }
 
-Peon::Peon(Peon const &p) : Victim(p.name){
-	*this = p;
+Peon::Peon(Peon const &p) : Victim(p){
 }
 
 Peon &Peon::operator=(const Peon &p){

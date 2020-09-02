@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 16:21:42 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/01 10:32:17 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/02 19:36:13 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ NinjaTrap::~NinjaTrap(){
 	std::cout << "The ninja has to disappeared" << std::endl;
 }
 
-NinjaTrap::NinjaTrap(NinjaTrap const &n) : ClapTrap(n.name){
-	*this = n;	
+NinjaTrap::NinjaTrap(NinjaTrap const &n) : ClapTrap(n){
+	std::cout << "Here comes the ninja\n" << std::endl;
 }
 
 NinjaTrap &NinjaTrap::operator=(const NinjaTrap &n){
@@ -51,7 +51,7 @@ NinjaTrap &NinjaTrap::operator=(const NinjaTrap &n){
 
 int NinjaTrap::meleeAttack(const std::string &target){
 	std::cout << this->name << ": I'm a shadow" << std::endl;
-	std::cout << "NINJ4-TP " <<  this->name
+	std::cout << "NINJ4-TP " << this->name
 				<< " attacks " << target
 				<< " at melee, causing " << this->melee
 				<< " points of damage!\n" << std::endl;
@@ -60,7 +60,7 @@ int NinjaTrap::meleeAttack(const std::string &target){
 
 int NinjaTrap::rangedAttack(const std::string &target){
 	std::cout << this->name << ": Die die die" << std::endl;
-	std::cout << "NINJ4-TP " << this->name
+	std::cout << "NINJ4-TP " << name
 				<< " attacks " << target
 				<< " at range, causing " << this->ranged
 				<< " points of damage!\n" << std::endl;

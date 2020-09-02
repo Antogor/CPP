@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 12:41:17 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/01 13:18:46 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/02 18:16:30 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Victim::~Victim(){
 }
 
 Victim::Victim(Victim const &v){
-	*this = v;
+	this->name = v.name;
 }
 
 Victim &Victim::operator=(const Victim &v){

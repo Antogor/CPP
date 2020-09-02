@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 13:40:34 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/01 13:46:44 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/02 18:19:07 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,10 @@ AWeapon::~AWeapon(){
 }
 
 AWeapon::AWeapon(AWeapon const &w){
-	*this = w;
+	this->name = w.name;
+	this->apcost = w.apcost;
+	this->damage = w.damage;
+	
 }
 
 AWeapon &AWeapon::operator=(const AWeapon &w){

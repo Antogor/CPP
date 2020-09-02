@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 14:48:49 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/01 18:43:10 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/02 18:22:03 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,15 @@ Character::~Character(){
 }
 
 Character::Character(Character const &c){
-	*this = c;
+	this->name = c.name;
+	this->ap = c.ap;
+	this->weapon = c.weapon;
 }
 
 Character &Character::operator=(const Character &c){
 	this->name = c.name;
 	this->ap = c.ap;
+	this->weapon = c.weapon;
 
 	return *this;
 }
