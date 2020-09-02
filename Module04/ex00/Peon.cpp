@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 13:00:08 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/02 18:16:52 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/02 19:50:13 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ Peon::~Peon(){
 }
 
 Peon::Peon(Peon const &p) : Victim(p){
+	std::cout << "Zog zog" << std::endl;	
 }
 
 Peon &Peon::operator=(const Peon &p){
