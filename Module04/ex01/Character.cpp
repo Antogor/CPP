@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 14:48:49 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/01 16:36:29 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/01 18:43:10 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 Character::Character(std::string const &name) : name(name){
 	this->ap = 40;
+	this->weapon = NULL;
 }
 
 Character::~Character(){
