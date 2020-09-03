@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/03 14:05:55 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/03 17:53:47 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/03 18:22:23 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,14 @@ class Form
 						virtual const char * what() const throw();
 			};
 
+			class UnsignedException: public std::exception{
+				public:
+						virtual const char * what() const throw();
+			};
+
 			Form &operator=(Form const &other);
+			
+			virtual void execute(Bureaucrat const &executor) const = 0;
 
 			void beSigned(Bureaucrat const &b);
 

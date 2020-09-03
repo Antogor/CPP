@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/03 17:53:35 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/03 17:53:37 by agarzon-         ###   ########.fr       */
+/*   Created: 2020/09/03 17:53:07 by agarzon-          #+#    #+#             */
+/*   Updated: 2020/09/03 20:00:32 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,11 @@ const char *Form::GradeTooLowException::what() const throw(){
 }
 
 const char *Form::IsSignedException::what() const throw(){
-	return "This form is already signed";
+	return "IsSignedException: Form is already signed";
+}
+
+const char*Form::UnsignedException::what() const throw(){
+	return "Unsigned Exception: Unsigned Form";
 }
 
 void Form::beSigned(Bureaucrat const &b){
@@ -78,6 +82,13 @@ int Form::getGradeToSign() const{
 
 int Form::getGradeToExecute() const{
 	return this->gradeToExecute;
+}
+
+void Form::execute(const Bureaucrat &executor) const{
+	if (!this->getSign())
+		throw Form::UnsignedException();
+	else if (executor.getGrade() > this->getGradeToExecute())
+		throw Form::GradeTooLowException();
 }
 
 std::ostream &operator<<(std::ostream &out, Form const &other){
