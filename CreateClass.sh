@@ -25,7 +25,7 @@ class $2
 
 	std::ostream &operator<<(std::ostream &out, $2 const &other);
 
-#endif" > $3$2.hpp 
+#endif" > $3/$2.hpp 
 
 elif [ $1 = "cpp" ]; then
 	echo "#include $INCLUDE
@@ -53,7 +53,7 @@ std::ostream &operator<<(std::ostream &out, $2 const &other){
 	return out;
 }
 
-" > $3$2.cpp
+" > $3/$2.cpp
 
 else
 	echo "Invalid command"
