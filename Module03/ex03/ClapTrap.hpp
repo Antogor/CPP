@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 14:11:25 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/01 10:43:31 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/03 13:17:19 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 class ClapTrap
 {
 	protected:
+			ClapTrap();
 			int hit;
 			int maxHit;
 			int energy;

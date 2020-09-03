@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 16:21:42 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/02 19:36:13 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/03 11:03:58 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "ScavTrap.hpp"
 #include <iostream>
 
-NinjaTrap::NinjaTrap(std::string const &name) : ClapTrap(name){
+NinjaTrap::NinjaTrap(std::string const &name): ClapTrap(name){
 	this->hit = 60;
 	this->maxHit = 60;
 	this->energy = 120;

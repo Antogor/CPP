@@ -6,11 +6,12 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 14:16:43 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/02 19:40:23 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/03 11:03:29 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+
 
 ClapTrap::ClapTrap(std::string const &name) : name(name){
 	this->hit = 100;

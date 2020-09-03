@@ -6,16 +6,17 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 13:09:25 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/01 10:31:29 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/03 11:04:33 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SCAVTRAP_HPP
 # define SCAVTRAP_HPP
 # include "ClapTrap.hpp"
-class ScavTrap : virtual public ClapTrap{
+class ScavTrap: virtual public ClapTrap{
 
 	private:
+			ScavTrap();
 			std::string challenges[5];
 	public:
           	ScavTrap(std::string const &name);

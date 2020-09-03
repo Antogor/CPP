@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 13:09:25 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/01 10:50:00 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/03 13:20:35 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 class ScavTrap{
 
 	private:
+			ScavTrap();
 			int hit;
         	int maxHit;
           	int energy;

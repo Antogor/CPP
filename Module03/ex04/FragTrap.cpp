@@ -6,15 +6,14 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 09:59:49 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/02 19:32:41 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/03 11:03:39 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 #include "ClapTrap.hpp"
 
-FragTrap::FragTrap(std::string const &name)
-		: ClapTrap(name){
+FragTrap::FragTrap(std::string const &name): ClapTrap(name){
 	this->melee = 30;
 	this->ranged = 20;
 	this->attacks[0] = "Can't touch me";

@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 17:29:18 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/01 10:38:42 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/03 11:30:25 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 # define SUPERTRAP_HPP
 # include "FragTrap.hpp"
 # include "NinjaTrap.hpp"
-# include "ClapTrap.hpp"
 
-class SuperTrap : public NinjaTrap, public FragTrap
+class SuperTrap: public NinjaTrap, public FragTrap
 {
+	private:
+			SuperTrap();
 	public:
 			SuperTrap(std::string const &name);
 			~SuperTrap();

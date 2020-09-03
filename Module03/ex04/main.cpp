@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 12:54:06 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/01 11:49:12 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/03 10:50:50 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ int main (void)
 	std::cout << "------------------------\n" << std::endl;
 	std::cout << "Super Test\n" << std::endl;
 	SuperTrap sup("S4P3R");
-	sup.meleeAttack("Handsome Jack");
-	sup.rangedAttack("Fanatic");
+	std::cout << sup.meleeAttack("Handsome Jack") << std::endl;
+	std::cout << sup.rangedAttack("Fanatic") << std::endl;
 	sup.vaulthunter_dot_exe("Bandit");
 	sup.takeDamage(25);
 	sup.beRepaired(40);
@@ -36,5 +36,6 @@ int main (void)
 	sup.ninjaShoebox(nt);
 	sup.ninjaShoebox(ct);
 	sup.vaulthunter_dot_exe("Skag");
-	return 0;;
+
+	return 0;
 }

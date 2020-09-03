@@ -6,15 +6,16 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 17:41:18 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/02 19:43:46 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/03 11:04:49 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "SuperTrap.hpp"
+#include "ClapTrap.hpp"
 #include "FragTrap.hpp"
 #include "NinjaTrap.hpp"
 
-SuperTrap::SuperTrap(std::string const &name): ClapTrap(name), NinjaTrap(name), FragTrap(name){
+SuperTrap::SuperTrap(std::string const &name): ClapTrap(name), FragTrap(name), NinjaTrap(name){
 	this->hit = this->FragTrap::hit;
 	this->maxHit = this->FragTrap::maxHit;
 	this->energy = this->NinjaTrap::energy;
@@ -48,9 +49,9 @@ SuperTrap &SuperTrap::operator=(const SuperTrap &sup){
 }
 
 int SuperTrap::rangedAttack(const std::string &target){
-	return FragTrap::rangedAttack(target);
+	return this->FragTrap::rangedAttack(target);
 }
 
 int SuperTrap::meleeAttack(const std::string &target){
-	return NinjaTrap::meleeAttack(target);
+	return this->NinjaTrap::meleeAttack(target);
 }

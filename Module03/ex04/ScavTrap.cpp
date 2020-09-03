@@ -6,14 +6,14 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 13:16:29 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/02 19:32:53 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/03 10:43:41 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 #include "ClapTrap.hpp"
 
-ScavTrap::ScavTrap(std::string const &name) : ClapTrap(name){
+ScavTrap::ScavTrap(std::string const &name): ClapTrap(name){
 	this->energy = 50;
 	this->maxEnergy = 50;
 	this->armor = 3;

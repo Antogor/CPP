@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 13:09:25 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/01 10:48:22 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/03 13:19:59 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 class ScavTrap : public ClapTrap{
 
 	private:
+			ScavTrap();
 			std::string challenges[5];
 	public:
           	ScavTrap(std::string const &name);
