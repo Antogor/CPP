@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/03 20:52:59 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/07 18:12:36 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/07 18:12:14 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,9 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(PresidentialPardonForm
 
 void PresidentialPardonForm::execute(const Bureaucrat &executor) const{
 	Form::execute(executor);
-	std::cout << this->objective << " Zafod Beeblebrox" << std::endl;
+	std::cout << this->objective << " has been forgiven by Zafod Beeblebrox" << std::endl;
 }
 
-
+Form *PresidentialPardonForm::generate(const std::string &target){
+	return new PresidentialPardonForm(target);
+}

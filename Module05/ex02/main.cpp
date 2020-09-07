@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/03 13:49:52 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/03 21:15:31 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/07 18:48:53 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ int main()
 {
 	Bureaucrat s("Sarah", 100);
 	Bureaucrat boss("Supervisor", 1);
-	Form *bored = new ShrubberyCreationForm("Boring_Register");
-	Form *moreBored = new RobotomyRequestForm("XJ34");
-	Form *moreMoreBored = new PresidentialPardonForm("B3RK");
+	Form *bored = new ShrubberyCreationForm("Office");
+	Form *moreBored = new RobotomyRequestForm("Marvin");
+	Form *moreMoreBored = new PresidentialPardonForm("You");
 
 
 	s.signForm(*bored);
@@ -83,5 +83,10 @@ int main()
 	} catch (Form::UnsignedException &e){
 		std::cerr << e.what() << std::endl;
 	}
+	std::cout << "------------------------------\n" << std::endl;
+
+	delete bored;
+	delete moreBored;
+	delete moreMoreBored;
 	return 0;
 }

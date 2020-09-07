@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/02 10:08:41 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/02 11:03:09 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/07 18:53:26 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,5 +90,6 @@ int main()
 	std::cout << squad->getCount() << " -> " << squad->push(squad->getUnit(3)) << std::endl;
 	std::cout << squad->getUnit(-1) << " " << squad->getUnit(10000) << std::endl;
 	delete squad;
+	delete squadCopy;
 	return 0;
 }
