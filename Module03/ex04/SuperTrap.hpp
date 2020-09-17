@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 17:29:18 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/03 11:30:25 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/17 18:50:37 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 # include "FragTrap.hpp"
 # include "NinjaTrap.hpp"
 
-class SuperTrap: public NinjaTrap, public FragTrap
+class SuperTrap:
+		public FragTrap, public NinjaTrap
 {
 	private:
 			SuperTrap();
@@ -24,8 +25,13 @@ class SuperTrap: public NinjaTrap, public FragTrap
 			~SuperTrap();
 			SuperTrap(SuperTrap const &sup);
 			SuperTrap &operator=(SuperTrap const &sup);
-			int rangedAttack(std::string const &target);
-			int meleeAttack(std::string const &target);
+			int getHit();
+			int getMaxHit();
+			int getEnergy();
+			int getMaxEnergy();
+			int getMelee();
+			int getRanged();
+			int getArmor();
 };
 
 #endif

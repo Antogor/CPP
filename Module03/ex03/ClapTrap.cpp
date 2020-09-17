@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 14:16:43 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/02 19:40:23 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/17 17:51:13 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,12 @@ ClapTrap::ClapTrap(std::string const &name) : name(name){
 	this->melee = 20;
 	this->ranged = 15;
 	this->armor = 5;
-	std::cout << "ClapTrap activated\n" << std::endl;
+	this->type = "CL4P-TP";
+	std::cout << this->name << " ClapTrap activated\n" << std::endl;
 }
 
 ClapTrap::~ClapTrap(){
-	std::cout << "ClapTrap destroyed" << std::endl;
+	std::cout << this->name << " ClapTrap destroyed" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &c){
@@ -38,7 +39,8 @@ ClapTrap::ClapTrap(const ClapTrap &c){
 	this->melee = c.melee;
 	this->ranged = c.ranged;
 	this->armor = c.armor;
-	std::cout << "ClapTrap activated\n" << std::endl;
+	this->type = c.type;
+	std::cout << this->name << " ClapTrap activated\n" << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &c){
@@ -51,19 +53,20 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &c){
 	this->melee = c.melee;
 	this->ranged = c.ranged;
 	this->armor = c.armor;
+	this->type = c.type;
 
 	return *this;
 }
 
 int ClapTrap::rangedAttack(const std::string &target){
-	std::cout << "CL4P-TP " << this->name << " attacks " << target
+	std::cout << this->type << " " << this->name << " attacks " << target
 				<< " at range, causing " << this->ranged
 				<< " points of damage!\n" << std::endl;
 	return this->ranged;
 }
 
 int ClapTrap::meleeAttack(const std::string &target){
-	std::cout << "CL4P-TP " << this->name
+	std::cout <<  this->type << " " << this->name
 				<< " attacks " << target
 				<< " at melee, causing " << this->melee
 				<< " points of damage!\n" << std::endl;

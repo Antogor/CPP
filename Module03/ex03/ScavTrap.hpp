@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 13:09:25 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/03 13:17:29 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/17 17:09:32 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ class ScavTrap : public ClapTrap{
           	~ScavTrap();
           	ScavTrap(const ScavTrap &s);
           	ScavTrap &operator=(const ScavTrap &s);
-          	int rangedAttack(std::string const &target);
-          	int meleeAttack(std::string const &target);
 			void challengeNewcomer(void);
 };
 

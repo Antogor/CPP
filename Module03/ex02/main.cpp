@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 12:54:06 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/02 19:14:20 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/17 17:06:57 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,19 @@ int main (void)
 	st.takeDamage(ft.vaulthunter_dot_exe(name2));
 	st.challengeNewcomer();
 	st.takeDamage(ft.vaulthunter_dot_exe(name2));
+	
+	std::cout << "-------------------------------\n" << std::endl;
 
 	FragTrap ft3(ft);
 	ft3.takeDamage(50);
 	ft.takeDamage(50);
 	ft3.vaulthunter_dot_exe("Me");
+	ft.takeDamage(50);
 
 	ft3 = ft;
 	ft3.beRepaired(50);
 	ft.takeDamage(50);
+	ft3.beRepaired(50);
 	ft3.vaulthunter_dot_exe("Me");
 	return 0;;
 }

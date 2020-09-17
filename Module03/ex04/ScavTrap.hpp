@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 13:09:25 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/03 11:04:33 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/17 16:21:30 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ class ScavTrap: virtual public ClapTrap{
           	~ScavTrap();
           	ScavTrap(const ScavTrap &s);
           	ScavTrap &operator=(const ScavTrap &s);
-          	int rangedAttack(std::string const &target);
-          	int meleeAttack(std::string const &target);
 			void challengeNewcomer(void);
 };
 

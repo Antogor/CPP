@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 09:59:49 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/03 11:03:39 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/17 17:58:13 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,15 @@
 #include "ClapTrap.hpp"
 
 FragTrap::FragTrap(std::string const &name): ClapTrap(name){
+	this->type = "FR4G-TP";
+	this->hit = 100;
+	this->maxHit = 100;
+	this->energy = 100;
+	this->maxEnergy = 100;
+	this->level = 1;
 	this->melee = 30;
 	this->ranged = 20;
+	this->armor = 5;
 	this->attacks[0] = "Can't touch me";
 	this->attacks[1] = "Granaaaaade";
 	this->attacks[2] = "Freeze peezy";
@@ -48,6 +55,7 @@ FragTrap &FragTrap::operator=(const FragTrap &f){
 	this->melee = f.melee;
 	this->ranged = f.ranged;
 	this->armor = f.armor;
+	this->type = f.type;
 	this->attacks[0] = f.attacks[0];
 	this->attacks[1] = f.attacks[1];
 	this->attacks[2] = f.attacks[2];
@@ -55,24 +63,6 @@ FragTrap &FragTrap::operator=(const FragTrap &f){
 	this->attacks[4] = f.attacks[4];
 
 	return *this;
-}
-
-int FragTrap::rangedAttack(const std::string &target){
-	std::cout << this->name << ": Hyah!" << std::endl; 
-	std::cout << "FR4G-TP " << name
-				<< " attacks " << target
-				<< " at range, causing " << this->ranged
-				<< " points of damage!\n" << std::endl;	
-	return this->ranged;
-}
-
-int FragTrap::meleeAttack(const std::string &target){
-	std::cout << this->name << ": Take that!" << std::endl; 
-	std::cout << "FR4G-TP " << this->name
-				<< " attacks " << target
-				<< " at melee, causing " << this->melee
-				<< " points of damage!\n" << std::endl;
-	return this->melee;
 }
 
 int FragTrap::vaulthunter_dot_exe(const std::string &target){
@@ -88,7 +78,7 @@ int FragTrap::vaulthunter_dot_exe(const std::string &target){
 		if (this->energy < 0)
 			this->energy = 0;
 		std::cout << this->name << ": " << this->attacks[std::rand() % 5] << std::endl;
-		std::cout << "FR4G-TP " << this->name
+		std::cout << this->type << " " << this->name
 					<< " attacks " << target
 					<< " causing " << finalDamage
 					<< " points of damage!" << std::endl;

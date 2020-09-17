@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 17:41:18 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/03 11:04:49 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/17 18:30:01 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 #include "FragTrap.hpp"
 #include "NinjaTrap.hpp"
 
-SuperTrap::SuperTrap(std::string const &name): ClapTrap(name), FragTrap(name), NinjaTrap(name){
+SuperTrap::SuperTrap(std::string const &name): 
+		ClapTrap(name), FragTrap(name), NinjaTrap(name){
 	this->hit = this->FragTrap::hit;
 	this->maxHit = this->FragTrap::maxHit;
 	this->energy = this->NinjaTrap::energy;
@@ -23,15 +24,16 @@ SuperTrap::SuperTrap(std::string const &name): ClapTrap(name), FragTrap(name), N
 	this->melee = this->NinjaTrap::melee;
 	this->ranged = this->FragTrap::ranged;
 	this->armor = this->FragTrap::armor;
-	std::cout << "Hey everybody! Check out my SUPER package!\n" << std::endl;
+	this->type = "S4P3R-TP";
+	std::cout << this->name << ": Hey everybody! Check out my SUPER package!\n" << std::endl;
 }
 
 SuperTrap::~SuperTrap(){
-	std::cout << "No, nononono NO! Crap!" << std::endl;
+	std::cout << this->name << ": No, nononono NO! Crap!" << std::endl;
 }
 
 SuperTrap::SuperTrap(SuperTrap const &sup) : ClapTrap(sup), FragTrap(sup), NinjaTrap(sup){
-	std::cout << "Hey everybody! Check out my SUPER package!\n" << std::endl;
+	std::cout << this->name << ": Hey everybody! Check out my SUPER package!\n" << std::endl;
 }
 
 SuperTrap &SuperTrap::operator=(const SuperTrap &sup){
@@ -44,14 +46,36 @@ SuperTrap &SuperTrap::operator=(const SuperTrap &sup){
 	this->armor = sup.armor;
 	this->name = sup.name;
 	this->level = sup.level;
+	this->type = sup.type;
 
 	return *this;
 }
 
-int SuperTrap::rangedAttack(const std::string &target){
-	return this->FragTrap::rangedAttack(target);
+int SuperTrap::getHit(){
+	return this->hit;
 }
 
-int SuperTrap::meleeAttack(const std::string &target){
-	return this->NinjaTrap::meleeAttack(target);
+int SuperTrap::getMaxHit(){
+	return this->maxHit;
 }
+
+int SuperTrap::getEnergy(){
+	return this->energy;
+}
+
+int SuperTrap::getMaxEnergy(){
+	return this->maxEnergy;
+}
+
+int SuperTrap::getMelee(){
+	return this->melee;
+}
+
+int SuperTrap::getRanged(){
+	return this->ranged;
+}
+
+int SuperTrap::getArmor(){
+	return this->armor;
+}
+

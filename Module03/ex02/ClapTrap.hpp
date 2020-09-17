@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 14:11:25 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/03 13:19:35 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/17 16:46:25 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,14 @@ class ClapTrap
 			int melee;
 			int ranged;
 			int armor;
+			std::string type;
 	public:
 			ClapTrap(std::string const &name);
 			virtual ~ClapTrap();
 			ClapTrap(const ClapTrap &c);
 			ClapTrap &operator=(const ClapTrap &c);
-			virtual int rangedAttack(std::string const &target);
-			virtual int meleeAttack(std::string const &target);
+			int rangedAttack(std::string const &target);
+			int meleeAttack(std::string const &target);
 			void takeDamage(unsigned int amount);
 			void beRepaired(unsigned int amount);
 };

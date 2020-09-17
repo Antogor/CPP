@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 13:16:29 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/02 19:32:53 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/17 16:52:27 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ ScavTrap::ScavTrap(std::string const &name) : ClapTrap(name){
 	this->challenges[2] = "Man versus machine! Very tiny streamlined machine!";
 	this->challenges[3] = "You versus me! Me versus you! Either way!";
 	this->challenges[4] = "Care to have a friendly duel?";
+	this->type = "SC4V-TP";
 	std::cout << this->name << ": Let's get this party started\n" << std::endl;
 }
 
@@ -48,6 +49,7 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &s){
 	this->melee = s.melee;
 	this->ranged = s.ranged;
 	this->armor = s.armor;
+	this->type = s.type;
 	this->challenges[0] = s.challenges[0];
 	this->challenges[1] = s.challenges[1];
 	this->challenges[2] = s.challenges[2];
@@ -55,24 +57,6 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &s){
 	this->challenges[4] = s.challenges[4];
 	
 	return *this;
-}
-
-int ScavTrap::rangedAttack(const std::string &target){
-	std::cout << this->name << ": Pull pin, throw!" << std::endl;
-	std::cout << "SC4V-TP " << name
-	            << " attacks " << target
-	            << " at range, causing " << this->ranged
-	            << " points of damage!\n" << std::endl;
-	return this->ranged;
-}
-
-int ScavTrap::meleeAttack(const std::string &target){
-	std::cout << this->name << ": Pop pop" << std::endl;
-	std::cout << "SC4V-TP " << this->name
-	            << " attacks " << target
-	            << " at melee, causing " << this->melee
-	            << " points of damage!\n" << std::endl;
-	return this->melee;
 }
 
 void ScavTrap::challengeNewcomer(){

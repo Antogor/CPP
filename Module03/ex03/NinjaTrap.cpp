@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 16:21:42 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/02 19:36:13 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/17 17:14:59 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ NinjaTrap::NinjaTrap(std::string const &name) : ClapTrap(name){
 	this->melee = 60;
 	this->ranged = 5;
 	this->armor = 0;
+	this->type = "NINJ4-TP";
 	std::cout << "Here comes the ninja\n" << std::endl;
 }
 
@@ -45,26 +46,9 @@ NinjaTrap &NinjaTrap::operator=(const NinjaTrap &n){
 	this->armor = n.armor;
 	this->level = n.level;
 	this->name = n.name;
+	this->type = n.type;
 	
 	return *this;
-}
-
-int NinjaTrap::meleeAttack(const std::string &target){
-	std::cout << this->name << ": I'm a shadow" << std::endl;
-	std::cout << "NINJ4-TP " << this->name
-				<< " attacks " << target
-				<< " at melee, causing " << this->melee
-				<< " points of damage!\n" << std::endl;
-	return this->melee;
-}
-
-int NinjaTrap::rangedAttack(const std::string &target){
-	std::cout << this->name << ": Die die die" << std::endl;
-	std::cout << "NINJ4-TP " << name
-				<< " attacks " << target
-				<< " at range, causing " << this->ranged
-				<< " points of damage!\n" << std::endl;
-	return this->ranged;
 }
 
 void NinjaTrap::ninjaShoebox(ClapTrap &c){
@@ -74,7 +58,7 @@ void NinjaTrap::ninjaShoebox(ClapTrap &c){
 		this->energy -= 55;
 		if (this->energy < 0)
 			this->energy = 0;
-		std::cout << "NINJ4-TP " << this->name << " destroy " << c.getName()
+		std::cout << this->type << " " << this->name << " destroy " << c.getName()
 					<< " with his dance moves\n" << std::endl;
 	}
 }
@@ -86,7 +70,7 @@ void NinjaTrap::ninjaShoebox(FragTrap &f){
 		this->energy -= 10;
 		if (this->energy < 0)
 			this->energy = 0;
-		std::cout << "NINJ4-TP " << this->name << " attacks " << f.getName()
+		std::cout <<  this->type << " " << this->name << " attacks " << f.getName()
 					<< " with shurikens\n" << std::endl;
 	}
 }
@@ -98,7 +82,7 @@ void NinjaTrap::ninjaShoebox(ScavTrap &s){
 		this->energy -= 25;
 		if (this->energy < 0)
 			this->energy = 0;
-		std::cout << "NINJ4-TP " << this->name << " make " << s.getName()
+		std::cout << this->type << " " << this->name << " make " << s.getName()
 					<< " cry\n" << std::endl;
 	}
 	
