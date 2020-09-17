@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 16:21:42 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/17 18:03:29 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/17 19:02:34 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,8 @@ void NinjaTrap::ninjaShoebox(ScavTrap &s){
 void NinjaTrap::ninjaShoebox(NinjaTrap &n){
 	std::cout << this->name << ": Time to recharge energy" << std::endl;
 
-	this->energy += 15;
+	this->energy += n.energy;
+	n.energy -= n.energy;
 	if (this->energy > this->maxEnergy)
 		this->energy = this->maxEnergy;
 	std::cout << "Diagnosis: " << this->energy << " remaining energy points\n" << std::endl;

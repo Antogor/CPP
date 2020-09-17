@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 14:16:43 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/17 17:52:35 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/17 18:58:26 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,14 +59,14 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &c){
 	return *this;
 }
 
-int ClapTrap::rangedAttack(const std::string &target){
+unsigned int ClapTrap::rangedAttack(const std::string &target){
 	std::cout << this->type << " " << this->name << " attacks " << target
 				<< " at range, causing " << this->ranged
 				<< " points of damage!\n" << std::endl;
 	return this->ranged;
 }
 
-int ClapTrap::meleeAttack(const std::string &target){
+unsigned int ClapTrap::meleeAttack(const std::string &target){
 	std::cout <<  this->type << " " << this->name
 				<< " attacks " << target
 				<< " at melee, causing " << this->melee
