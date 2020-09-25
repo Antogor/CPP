@@ -5,3 +5,4 @@ a.out
 clock.cpp
 *.replace
 replace
+test.cpp

@@ -6,14 +6,10 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 12:54:06 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/17 18:45:10 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/19 13:05:23 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
-#include "ScavTrap.hpp"
-#include "NinjaTrap.hpp"
-#include "ClapTrap.hpp"
 #include "SuperTrap.hpp"
 
 int main (void)

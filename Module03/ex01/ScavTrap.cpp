@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 13:16:29 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/02 19:33:08 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/18 17:54:41 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ int ScavTrap::meleeAttack(const std::string &target){
 }
 
 void ScavTrap::takeDamage(unsigned int amount){
-	if (amount > this->armor){
+	if (amount > (unsigned int)this->armor){
 	    amount -= this->armor;
 	    std::cout << this->name << ": Ahg! My assets" << std::endl;
 	}
@@ -98,7 +98,7 @@ void ScavTrap::takeDamage(unsigned int amount){
 	    amount = 0;
 	    std::cout << this->name << ": Hahahahaha I'm alive!" << std::endl;
 	}
-	if (amount >= this->maxHit){
+	if (amount >= (unsigned int)this->maxHit){
 	    this->hit = 0;
 	    std::cout << this->name << ": Extra ouch!" << std::endl;
 	}
@@ -113,7 +113,7 @@ void ScavTrap::takeDamage(unsigned int amount){
 }
 
 void ScavTrap::beRepaired(unsigned int amount){
-	if (amount > this->maxHit){
+	if (amount > (unsigned int)this->maxHit){
 	    std::cout << this->name << ": I'm too pretty to die!" << std::endl;
 	    std::cout << "SC4V-TP " << this->name << " recovers "
 	                << amount << " hit points" << std::endl;

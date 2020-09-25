@@ -6,15 +6,20 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 16:21:42 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/17 19:02:34 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/25 15:15:22 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "NinjaTrap.hpp"
-#include "ClapTrap.hpp"
-#include "FragTrap.hpp"
-#include "ScavTrap.hpp"
-#include <iostream>
+
+NinjaTrap::NinjaTrap(): ClapTrap(){
+	this->energy = 120;
+	this->maxEnergy = 120;
+	this->melee = 60;
+	this->type = "NINJ4-TP";
+	std::cout << this->name << ": Here comes the ninja\n" << std::endl;
+	
+}
 
 NinjaTrap::NinjaTrap(std::string const &name): ClapTrap(name){
 	this->hit = 60;
@@ -92,9 +97,8 @@ void NinjaTrap::ninjaShoebox(NinjaTrap &n){
 	std::cout << this->name << ": Time to recharge energy" << std::endl;
 
 	this->energy += n.energy;
-	n.energy -= n.energy;
 	if (this->energy > this->maxEnergy)
 		this->energy = this->maxEnergy;
-	std::cout << "Diagnosis: " << this->energy << " remaining energy points\n" << std::endl;
+	std::cout << this->name << " stole " << n.getName() << " energy.\nDiagnosis: " << this->energy << " remaining energy points\n" << std::endl;
 }
 

@@ -6,12 +6,11 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 13:16:29 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/17 17:28:07 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/19 12:52:33 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
-#include "ClapTrap.hpp"
 
 ScavTrap::ScavTrap(std::string const &name): ClapTrap(name){
 	this->energy = 50;

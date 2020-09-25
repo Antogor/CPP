@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 16:21:42 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/17 17:14:59 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/19 11:44:27 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,5 +94,5 @@ void NinjaTrap::ninjaShoebox(NinjaTrap &n){
 	this->energy += 15;
 	if (this->energy > this->maxEnergy)
 		this->energy = this->maxEnergy;
-	std::cout << "Diagnosis: " << this->energy << " remaining energy points\n" << std::endl;
+	std::cout << this->name << " stole " << n.getName() << " energy.\nDiagnosis: " << this->energy << " remaining energy points\n" << std::endl;
 }

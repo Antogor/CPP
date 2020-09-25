@@ -6,14 +6,14 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 14:16:43 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/17 18:58:26 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/25 15:16:26 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 
-ClapTrap::ClapTrap(std::string const &name) : name(name){
+ClapTrap::ClapTrap(){
 	this->hit = 100;
 	this->maxHit = 100;
 	this->energy = 100;
@@ -24,6 +24,21 @@ ClapTrap::ClapTrap(std::string const &name) : name(name){
 	this->armor = 5;
 	this->type = "CL4P-TP";
 	std::cout << this->name << " ClapTrap activated\n" << std::endl;
+	
+}
+
+ClapTrap::ClapTrap(std::string const &name): name(name){
+	this->hit = 100;
+	this->maxHit = 100;
+	this->energy = 100;
+	this->maxEnergy = 100;
+	this->level = 1;
+	this->melee = 20;
+	this->ranged = 15;
+	this->armor = 5;
+	this->type = "CL4P-TP";
+	std::cout << this->name << " ClapTrap activated\n" << std::endl;
+	
 }
 
 ClapTrap::~ClapTrap(){
@@ -59,14 +74,14 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &c){
 	return *this;
 }
 
-unsigned int ClapTrap::rangedAttack(const std::string &target){
+int ClapTrap::rangedAttack(const std::string &target){
 	std::cout << this->type << " " << this->name << " attacks " << target
 				<< " at range, causing " << this->ranged
 				<< " points of damage!\n" << std::endl;
 	return this->ranged;
 }
 
-unsigned int ClapTrap::meleeAttack(const std::string &target){
+int ClapTrap::meleeAttack(const std::string &target){
 	std::cout <<  this->type << " " << this->name
 				<< " attacks " << target
 				<< " at melee, causing " << this->melee
@@ -75,11 +90,11 @@ unsigned int ClapTrap::meleeAttack(const std::string &target){
 }
 
 void ClapTrap::takeDamage(unsigned int amount){
-	if (amount > this->armor)
+	if (amount > (unsigned int)this->armor)
 		amount -= this->armor;
 	else
 		amount = 0;
-	if (amount >= this->maxHit)
+	if (amount >= (unsigned int)this->maxHit)
 		this->hit = 0;
 	else{
 		this->hit -= amount;
@@ -92,7 +107,7 @@ void ClapTrap::takeDamage(unsigned int amount){
 }
 
 void ClapTrap::beRepaired(unsigned int amount){
-	if (amount > this->maxHit){
+	if (amount > (unsigned int)this->maxHit){
 		std::cout << this->name << " recovers "
 					<< amount << " hit points" << std::endl;
 		this->hit = this->maxHit;
@@ -110,3 +125,4 @@ void ClapTrap::beRepaired(unsigned int amount){
 std::string ClapTrap::getName(){
 	return this->name;
 }
+

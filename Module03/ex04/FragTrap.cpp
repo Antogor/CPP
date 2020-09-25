@@ -6,12 +6,11 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 09:59:49 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/17 17:58:13 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/20 10:53:17 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
-#include "ClapTrap.hpp"
 
 FragTrap::FragTrap(std::string const &name): ClapTrap(name){
 	this->type = "FR4G-TP";

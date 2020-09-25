@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 09:59:49 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/02 19:33:47 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/18 17:51:55 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ int FragTrap::meleeAttack(const std::string &target){
 }
 
 void FragTrap::takeDamage(unsigned int amount){
-	if (amount > this->armor){
+	if (amount > (unsigned int)this->armor){
 		amount -= this->armor;
 		std::cout << this->name << ": My robotic flesh! AAHH!" << std::endl;
 	}
@@ -97,7 +97,7 @@ void FragTrap::takeDamage(unsigned int amount){
 		amount = 0;
 		std::cout << this->name << ": Holy armour!" << std::endl;
 	}
-	if (amount >= this->maxHit){
+	if (amount >= (unsigned int)this->maxHit){
 		this->hit = 0;
 		std::cout << this->name << ": Ouch! critical...hit" << std::endl;
 	}
@@ -112,7 +112,7 @@ void FragTrap::takeDamage(unsigned int amount){
 }
 
 void FragTrap::beRepaired(unsigned int amount){
-	if (amount > this->maxHit){
+	if (amount < (unsigned int)this->maxHit){
 		std::cout << this->name << ": Sweet life juice" << std::endl;
 		std::cout << "FR4G-TP " << this->name << " recovers "
 					<< amount << " hit points" << std::endl;

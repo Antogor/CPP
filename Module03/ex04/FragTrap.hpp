@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 09:47:33 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/17 16:42:50 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/20 11:13:30 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ class FragTrap: virtual public ClapTrap
 {
 	private:
 			FragTrap();
+	protected:
 			std::string attacks[5];
 	public:
 			FragTrap(std::string const &name);

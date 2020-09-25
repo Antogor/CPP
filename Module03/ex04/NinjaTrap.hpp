@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 16:05:52 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/17 18:03:39 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/25 15:36:39 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,9 @@
 
 class NinjaTrap: virtual public ClapTrap{
 	private:
-			NinjaTrap();
+
 	public:
+			NinjaTrap();
 			NinjaTrap(std::string const &name);
 			virtual ~NinjaTrap();
 			NinjaTrap(NinjaTrap const &n);

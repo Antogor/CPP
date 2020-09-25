@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 14:16:43 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/17 17:50:07 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/18 17:56:14 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,11 +74,11 @@ int ClapTrap::meleeAttack(const std::string &target){
 }
 
 void ClapTrap::takeDamage(unsigned int amount){
-	if (amount > this->armor)
+	if (amount > (unsigned int)this->armor)
 		amount -= this->armor;
 	else
 		amount = 0;
-	if (amount >= this->maxHit)
+	if (amount >= (unsigned int)this->maxHit)
 		this->hit = 0;
 	else{
 		this->hit -= amount;
@@ -91,7 +91,7 @@ void ClapTrap::takeDamage(unsigned int amount){
 }
 
 void ClapTrap::beRepaired(unsigned int amount){
-	if (amount > this->maxHit){
+	if (amount > (unsigned int)this->maxHit){
 		std::cout << this->name << " recovers "
 					<< amount << " hit points" << std::endl;
 		this->hit = this->maxHit;
