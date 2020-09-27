@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 17:41:18 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/25 15:37:50 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/09/27 11:28:36 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,6 @@
 
 SuperTrap::SuperTrap(std::string const &name): ClapTrap(name),
 		 FragTrap(name), NinjaTrap(){
-//	this->hit = FragTrap::ClapTrap::hit;
-//	this->maxHit = FragTrap::maxHit;
-//	this->energy = NinjaTrap::energy;
-//	this->maxEnergy = NinjaTrap::maxEnergy;
-//	this->melee = NinjaTrap::melee;
-//	this->ranged = FragTrap::ranged;
-//	this->armor = FragTrap::armor;
 	this->type = "S4P3R-TP";
 	std::cout << this->name << ": Hey everybody! Check out my SUPER package!\n" << std::endl;
 }
