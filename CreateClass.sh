@@ -1,59 +1,59 @@
-#!/bin/bash/
+#!/bin/bash
+COMAND=$1
+CLASS_NAME=$2
+MAYUS="${CLASS_NAME}_hpp"
+INCLUDE='"'$CLASS_NAME'.hpp"'
 
-MAYUS="$2_hpp"
-INCLUDE='"'$2'.hpp"'
-
-if [ $1 = "hpp" ]; then
+if [ $COMAND = "create" ]; then
 	echo "#ifndef ${MAYUS^^}
 # define ${MAYUS^^}
 # include <ostream>
 # include <string>
 # include <iostream>
 
-class $2
+class $CLASS_NAME
 {
 	private:
 	public:
-			$2();
-			$2($2 const &other);
-			virtual ~$2();
+			$CLASS_NAME();
+			$CLASS_NAME($CLASS_NAME const &other);
+			virtual ~$CLASS_NAME();
 			
-			$2 &operator=($2 const &other);
+			$CLASS_NAME &operator=($CLASS_NAME const &other);
 
 
 };
 
-	std::ostream &operator<<(std::ostream &out, $2 const &other);
+	std::ostream &operator<<(std::ostream &out, $CLASS_NAME const &other);
 
-#endif" > $3/$2.hpp 
+#endif" > $3/$CLASS_NAME.hpp 
 
-elif [ $1 = "cpp" ]; then
 	echo "#include $INCLUDE
 
-$2::$2(){
+$CLASS_NAME::$CLASS_NAME(){
 
 }
 
-$2::~$2(){
+$CLASS_NAME::~$CLASS_NAME(){
 
 }
 
-$2::$2($2 const &other){
+$CLASS_NAME::$CLASS_NAME($CLASS_NAME const &other){
 
 }
 
-$2 &$2::operator=($2 const &other){
+$CLASS_NAME &$CLASS_NAME::operator=($CLASS_NAME const &other){
 
 	return *this;
 }
 
 
-std::ostream &operator<<(std::ostream &out, $2 const &other){
+std::ostream &operator<<(std::ostream &out, $CLASS_NAME const &other){
 
 	return out;
 }
 
-" > $3/$2.cpp
+" > $3/$CLASS_NAME.cpp
 
 else
 	echo "Invalid command"
