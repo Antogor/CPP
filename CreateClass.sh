@@ -1,6 +1,7 @@
 #!/bin/bash
 COMAND=$1
 CLASS_NAME=$2
+PATH=$3
 MAYUS="${CLASS_NAME}_hpp"
 INCLUDE='"'$CLASS_NAME'.hpp"'
 
@@ -26,7 +27,7 @@ class $CLASS_NAME
 
 	std::ostream &operator<<(std::ostream &out, $CLASS_NAME const &other);
 
-#endif" > $3/$CLASS_NAME.hpp 
+#endif" > $PATH/$CLASS_NAME.hpp 
 
 	echo "#include $INCLUDE
 
@@ -53,7 +54,7 @@ std::ostream &operator<<(std::ostream &out, $CLASS_NAME const &other){
 	return out;
 }
 
-" > $3/$CLASS_NAME.cpp
+" > $PATH/$CLASS_NAME.cpp
 
 else
 	echo "Invalid command"
