@@ -1,95 +1,60 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/02 10:08:41 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/07 18:53:26 by agarzon-         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+# include "Animal.hpp"
+# include "Dog.hpp"
+# include "Cat.hpp"
+# include "WrongAnimal.hpp"
+# include "WrongCat.hpp"
 
-#include "Squad.hpp"
-#include "TacticalMarine.hpp"
-#include "AssaultTerminator.hpp"
-#include <iostream>
+int main(){
+    /*
+        const Animal* meta = new Animal();
+    */
+    const Animal* d = new Dog();
+    const Animal* c = new Cat();
 
-int main()
-{
-	ISpaceMarine* bob = new TacticalMarine;
-	ISpaceMarine* jim = new AssaultTerminator;
-	ISquad* vlc = new Squad;
-	vlc->push(bob);
-	vlc->push(jim);
-	for (int i = 0; i < vlc->getCount(); ++i)
-	{
-		ISpaceMarine* cur = vlc->getUnit(i);
-		cur->battleCry();
-		cur->rangedAttack();
-		cur->meleeAttack();
-	}
-	delete vlc;
+    std::cout << "+++++++++++++++++++++++" << std::endl;
+    std::cout << d->getType() << " " << std::endl;
+    std::cout << c->getType() << " " << std::endl;
 
-	std::cout << "--------------------------\n" << std::endl;
+    std::cout << "+++++++++++++++++++++++" << std::endl;
+    c->makeSound();
+    d->makeSound();
+    
+    std::cout << "+++++++++++++++++++++++" << std::endl;
+    delete c;
+    delete d;
 
-	ISquad *squad = new Squad;
-	std::cout << squad->push(new TacticalMarine) << " Marine added" << std::endl;
-	std::cout << squad->push(new TacticalMarine) << " Marine added" << std::endl;
-	for (int i = 0; i < squad->getCount(); ++i)
-	{
-		ISpaceMarine* marine = squad->getUnit(i);
-		marine->battleCry();
-		marine->rangedAttack();
-		marine->meleeAttack();
-	}
-	std::cout << squad->getCount() << " Marines remaining" << std::endl;
-	
-	std::cout << "--------------------------\n" << std::endl;
-	
-	ISpaceMarine* InquisitorMartin = new TacticalMarine;
-	ISpaceMarine* GreyFox = new AssaultTerminator;
+    std::cout << "\n--------------------------\n" << std::endl;
 
-	squad->push(InquisitorMartin);
-	squad->push(GreyFox);
-	squad->push(InquisitorMartin);
-	for (int i = 0; i < squad->getCount(); ++i)
-	{
-		ISpaceMarine* marine = squad->getUnit(i);
-		marine->battleCry();
-		marine->rangedAttack();
-		marine->meleeAttack();
-	}
-	std::cout << squad->getCount() << " Marines remaining" << std::endl;
-	
-	std::cout << "--------------------------\n" << std::endl;
-	
-	ISquad *squadCopy = new Squad;
-	squadCopy->push(new AssaultTerminator);
-	squadCopy->push(new AssaultTerminator);
-	for (int i = 0; i < squadCopy->getCount(); ++i)
-	{
-		ISpaceMarine* marine = squadCopy->getUnit(i);
-		marine->battleCry();
-		marine->rangedAttack();
-		marine->meleeAttack();
-	}
-	std::cout << squadCopy->getCount() << " Marines remaining" << std::endl;
-	squadCopy = squad;
-	std::cout << squadCopy->getCount() << " Marines remaining" << std::endl;
-	for (int i = 0; i < squadCopy->getCount(); ++i)
-	{
-		ISpaceMarine* marine = squadCopy->getUnit(i);
-		marine->battleCry();
-		marine->rangedAttack();
-		marine->meleeAttack();
-	}
-	std::cout << "--------------------------\n" << std::endl;
-	
-	std::cout << squad->getCount() << " -> " << squad->push(nullptr) << std::endl;
-	std::cout << squad->getCount() << " -> " << squad->push(squad->getUnit(3)) << std::endl;
-	std::cout << squad->getUnit(-1) << " " << squad->getUnit(10000) << std::endl;
-	delete squad;
-	delete squadCopy;
-	return 0;
+    int amountOfAnimals = 4;
+    Animal* animals[amountOfAnimals];
+    int i = 0;
+    int j = amountOfAnimals / 2;
+
+    std::cout << "---- CONSTRUCTORS CALL ----" << std::endl;
+    while (i < amountOfAnimals)
+    {
+        if (i == j){
+            while (i < amountOfAnimals)
+            {
+                animals[i] = new Dog();
+                i++;
+                std::cout << "-----------------------------" << std::endl;
+
+            }
+        }
+        else{
+            animals[i] = new Cat();
+            std::cout << "-----------------------------" << std::endl;
+            i++;
+        }
+    }
+
+    std::cout << "\n---- DESTRUCTORS CALL ----" << std::endl;
+    i = 0;
+    while (i < amountOfAnimals)
+    {
+        delete animals[i];
+        std::cout << "-----------------------------" << std::endl;
+        i++;
+    }
 }
