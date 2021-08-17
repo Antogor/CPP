@@ -14,7 +14,7 @@
 #include "Form.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string const &objective): 
-	objective(objective), Form("ShrubberyCreationForm", 145, 137)
+	Form("ShrubberyCreationForm", 145, 137), objective(objective)
 {
 	this->trees[0] = "*";
 	this->trees[1] = "/";
@@ -29,7 +29,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm(){
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &other):
-	objective(other.objective), Form(other)
+	Form(other), objective(other.objective)
 {
 	this->trees[0] = "*";
 	this->trees[1] = "/";

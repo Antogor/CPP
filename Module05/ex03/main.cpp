@@ -22,46 +22,47 @@ int main()
 	Bureaucrat s("Sarah", 100);
 	Bureaucrat boss("Supervisor", 1);
 	Intern inter;
-	try {
-	
+
+	try{
 		Form *bored = inter.makeForm("shrubbery creation", "office");
 		Form *moreBored = inter.makeForm("robotomy request", "Marvin");
 		Form *moreMoreBored = inter.makeForm("presidential pardon", "You");
-
-		s.signForm(*bored);
-		boss.signForm(*moreMoreBored);
-		s.executForm(*bored);
-		boss.executForm(*moreMoreBored);
-		
-		std::cout << "------------------------------\n" << std::endl;
-		
-//		s.executForm(*moreMoreBored);
-//		
-//		std::cout << "------------------------------\n" << std::endl;
-//		
-//		boss.executForm(*moreBored);
-//		
-//		std::cout << "------------------------------\n" << std::endl;
-//		
-//		moreBored->beSigned(boss);
-//		moreBored->execute(boss);
-//		
-//		std::cout << "------------------------------\n" << std::endl;
-//		
-//		boss.executForm(*moreBored);
-
+		try {
+			s.signForm(*bored);
+			boss.signForm(*moreMoreBored);
+			s.executForm(*bored);
+			boss.executForm(*moreMoreBored);
+			
+			std::cout << "------------------------------\n" << std::endl;
+			
+//			s.executForm(*moreMoreBored);
+			
+//			std::cout << "------------------------------\n" << std::endl;
+			
+//			boss.executForm(*moreBored);
+			
+//			std::cout << "------------------------------\n" << std::endl;
+			
+//			moreBored->beSigned(boss);
+//			moreBored->execute(boss);
+			
+//			std::cout << "------------------------------\n" << std::endl;
+			
+//			boss.executForm(*moreBored);
+	
+		}catch (Form::GradeTooHighException &e){
+			std::cerr << e.what() << std::endl;
+		} catch (Form::GradeTooLowException &e){
+			std::cerr << e.what() << std::endl;
+		} catch (Form::IsSignedException &e){
+			std::cerr << e.what() << std::endl;
+		} catch (Form::UnsignedException &e){
+			std::cerr << e.what() << std::endl;
+		}
 		delete(bored);
 		delete(moreBored);
-		delete(moreMoreBored); 
+		delete(moreMoreBored);
 	} catch (Intern::UnrecognizedFormException &e) {
-		std::cerr << e.what() << std::endl;
-	}catch (Form::GradeTooHighException &e){
-		std::cerr << e.what() << std::endl;
-	} catch (Form::GradeTooLowException &e){
-		std::cerr << e.what() << std::endl;
-	} catch (Form::IsSignedException &e){
-		std::cerr << e.what() << std::endl;
-	} catch (Form::UnsignedException &e){
 		std::cerr << e.what() << std::endl;
 	}
 	return 0;
