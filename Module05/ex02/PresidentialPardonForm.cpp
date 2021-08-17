@@ -14,7 +14,7 @@
 #include "Form.hpp"
 
 PresidentialPardonForm::PresidentialPardonForm(std::string const &objective): 
-	objective(objective), Form("PresidentialPardonForm", 25, 5)
+	Form("PresidentialPardonForm", 25, 5), objective(objective)
 {
 
 }
@@ -24,7 +24,7 @@ PresidentialPardonForm::~PresidentialPardonForm(){
 }
 
 PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const &other):
-	objective(other.objective), Form(other)
+	Form(other), objective(other.objective)
 {
 
 }

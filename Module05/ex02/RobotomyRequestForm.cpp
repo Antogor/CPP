@@ -14,7 +14,7 @@
 #include "Form.hpp"
 
 RobotomyRequestForm::RobotomyRequestForm(std::string const &objective): 
-	objective(objective), Form("RobotomyRequestForm", 72, 45)
+	Form("RobotomyRequestForm", 72, 45), objective(objective)
 {
 
 }
@@ -24,7 +24,7 @@ RobotomyRequestForm::~RobotomyRequestForm(){
 }
 
 RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &other):
-	objective(other.objective), Form(other)
+	Form(other), objective(other.objective)
 {
 
 }
