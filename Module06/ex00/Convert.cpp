@@ -48,7 +48,7 @@ bool Convert::isAInt(const std::string &s) const{
 	int i = 0;
 	if(s[0] == '-' || s[0] == '+')
 		i++;
-	for(; i < s.length(); i++)
+	for(; i < static_cast<int>(s.length()); i++)
 		if(!std::isdigit(s[i]))
 			return false;
 	return true;
@@ -73,7 +73,7 @@ bool Convert::isAFloat(const std::string &s){
 		return false;
 	if (s[0] == '-' || s[0] == '+')
 		i++;
-	for(; i < s.length() - 1; i++){
+	for(; i < static_cast<int>(s.length() - 1); i++){
 		if(!std::isdigit(s[i])){
 			if(s[i] == '.' || s[i] == ',')
 				this->_dot = 1;
@@ -95,7 +95,7 @@ bool Convert::isADouble(const std::string &s){
 	}
 	if (s[0] == '-' || s[0] == '+')
 		i++;
-	for(; i < s.length(); i++){
+	for(; i < static_cast<int>(s.length()); i++){
 		if(!std::isdigit(s[i])){
 			if(s[i] == '.' || s[i] == ',')
 				this->_dot = 1;
