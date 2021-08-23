@@ -4,6 +4,12 @@
 # include <string>
 # include <iostream>
 
+struct Data{
+	int n;
+	char c;
+	std::string s;
+};
+
 class Serialize
 {
 	private:
