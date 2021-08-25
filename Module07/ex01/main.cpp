@@ -23,18 +23,18 @@ int main( void ) {
         std::cout << "Int stroed: " << iarr[i] << std::endl;
     }
 
-    ::iter(iarr, l, inc);
+    ::iter(iarr, l, inc<int>);
 
     std::cout << "--- ARRAY AFTER INCREMENT ---" << std::endl;
-    ::iter(iarr, l, imp);
+    ::iter(iarr, l, imp<int>);
 
     std::cout << "--- ARRAY OF CHARS ---" << std::endl;
     char charr[5] = {'a', 'b', 'c', 'd', 'e'};
 
-    ::iter(charr, 5, imp);
+    ::iter(charr, 5, imp<char>);
 
-    //std::cout << "--- ARRAY AFTER INCREMENT ---" << std::endl;
-    //::iter(charr, 5, inc);
-    //::iter(charr, 5, imp);
+    std::cout << "--- ARRAY AFTER INCREMENT ---" << std::endl;
+    ::iter(charr, 5, inc<char>);
+    ::iter(charr, 5, imp<char>);
     return 0;
 }
