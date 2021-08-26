@@ -16,9 +16,15 @@ int main( void ) {
    // int *a = new int();
    // std::cout << a[9] << std::endl;
 
-    Array<char> *l = new Array<char>(1);
+    Array<uint> *l = new Array<uint>(1);
+    //Array<uint> *j = new Array<uint>;
     l->x[0] = 'c';
-    l->x[1] = 'b';
-    std::cout << l->x[1] << std::endl;
+    //j = l;
+    Array<uint> *j = new Array<uint>(*l);
+    std::cout << j->x[0] << std::endl;
+    std::cout << l << std::endl;
+    std::cout << j << std::endl;
+    l->x[0] = 2;
+    std::cout << j->x[0] << std::endl;
 
 }
