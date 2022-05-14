@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/03 17:53:07 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/07 18:00:29 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/05/14 14:57:38 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,11 @@ Form &Form::operator=(Form const &other){
 }
 
 const char *Form::GradeTooHighException::what() const throw(){
-	return "ForException: Grade Too High";
+	return "FormException: Grade Too High";
 }
 
 const char *Form::GradeTooLowException::what() const throw(){
-	return "ForException: Grade Too Low";
+	return "FormException: Grade Too Low";
 }
 
 const char *Form::IsSignedException::what() const throw(){
