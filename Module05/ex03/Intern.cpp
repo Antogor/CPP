@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/03 21:25:35 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/07 18:46:03 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/05/20 18:03:32 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ Intern::Intern(){
 	this->names[0] = "shrubbery creation";
 	this->names[1] = "robotomy request";
 	this->names[2] = "presidential pardon";
+	std::cout << "Hi, i'm the new intern" << std::endl;
 }
 
 Intern::~Intern(){

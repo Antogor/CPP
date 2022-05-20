@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/03 17:59:15 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/03 20:32:55 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/05/20 18:04:37 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ void ShrubberyCreationForm::execute(const Bureaucrat &executor) const{
 	}
 
 	out.close();
+	std::cout << this->objective+"_shrubbery created" << std::endl << std::endl;
 }
 
 
