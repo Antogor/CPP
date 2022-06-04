@@ -18,6 +18,10 @@ class Dog : public Animal
 			void makeSound() const;
 			
 			Dog &operator=(Dog const &other);
+			void setThink(const std::string idea);
+			std::string getIdea();
+			void setType(const std::string);
+			std::string getType() const;
 
 
 };

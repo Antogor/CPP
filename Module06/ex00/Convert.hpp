@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/09 16:40:36 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/10 17:25:21 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/06/04 16:52:56 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <ostream>
 # include <string>
 # include <iostream>
+# include <iomanip>
 # include <cctype>
 # include <cstdlib>
 # include <limits>
@@ -32,6 +33,8 @@ class Convert
 			int 		_dot;
 			std::string	_errors[4];
 			int 		_nan;
+			bool 		isNumericParseable(const std::string &s);
+			bool isAChar(std::string const &s) const;
 	public:
 			Convert(std::string const &s);
 			Convert(Convert const &other);
@@ -40,10 +43,6 @@ class Convert
 			Convert &operator=(Convert const &other);
 
 			void convert(void);
-			bool isAChar(std::string const &s) const;
-			bool isAInt(std::string const &s) const;
-			bool isAFloat(std::string const &s);
-			bool isADouble(std::string const &s);
 
 			int getInt(void) const;
 			float getFloat(void) const;
@@ -52,6 +51,7 @@ class Convert
 			std::string getStr(void) const;
 			int getDot() const;
 			int getNan() const;
+			std::string getErrors(int n) const;
 };
 
 	std::ostream &operator<<(std::ostream &out, Convert const &other);

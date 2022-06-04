@@ -11,6 +11,8 @@ class Brain
 	public:
 			Brain();
 			virtual ~Brain();
+			std::string getIdeas();
+			void setIdeas(const std::string);
 };
 
 #endif
