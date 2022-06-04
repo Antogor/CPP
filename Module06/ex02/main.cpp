@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/09 17:48:47 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/09/10 16:03:56 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/06/04 17:33:34 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ Base *generate(void){
 
 void identify (Base *p){
 
+	std::cout << "USING IDENTIFY FROM POINTER\n";
     if (dynamic_cast<A *>(p)){
         std::cout << "A" << std::endl;
     }
@@ -47,17 +48,31 @@ void identify (Base *p){
     }
 }
 
+void identify (Base &p){
+	std::cout << "USING IDENTIFY FROM REFERENCE\n";
+	identify(&p);
+}
+
 int main(){
 
     Base *b;
     
-    for(int i = 0; i < 10; i++){
-        std::cout << i + 1 << "º: ";
+    for(int i = 0; i < 5; i++){
         b = generate();
+        std::cout << i + 1 << "º:\n";
         identify(b);
         std::cout << "----------" << std::endl;
         delete b;
     }
 
+    std::cout << std::endl;
+
+    for(int i = 0; i < 5; i++){
+        b = generate();
+        std::cout << i + 1 << "º:\n";
+        identify(*b);
+        std::cout << "----------" << std::endl;
+        delete b;
+    }
     return 0;
 }
