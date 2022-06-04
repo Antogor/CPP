@@ -4,43 +4,66 @@
 # include <string>
 # include <iostream>
 
-template <class T>
+template <typename T>
 class Array
 {
 	private:
 			T *_x;
-			int _size;
+			size_t _size;
 		
 	public:
 
-			Array<T>():_size(0), _x(nullptr){};
+			Array<T>(){
+				this->_size = 0;
+				this->_x = nullptr;
+			};
 
 			Array<T>(const uint size):_size(size){
-				this->_x = new T[size];
-			//	if (typeid(t) == typeid(uint)){
-			//		x = new T[t];
-			//	}
-			//	else
-			//		x = new T[2];
+				this->_x = new T[size]();
 			};
 
 			Array<T>(Array<T> const &other){
-				*this = other;
+				if (other._size > 0){
+					this->_x = new T[other._size];
+					for (size_t i = 0; i < other._size; i++)
+						this->_x[i] = other._x[i];
+				}
+				this->_size = other._size;
 			};
 
-			virtual ~Array<T>(){};
+			virtual ~Array<T>(){
+				if (this->_size > 0)
+					delete[] this->_x;
+			};
+		
+			class OutOfBoundsException: public std::exception{
+				public:
+					virtual const char *what() const throw(){
+						return "ArrayException: index out of bounds";
+					}
+			};
 			
 			Array<T> &operator=(Array<T> const &other){
-				//delete[] this->_x;
-				this->_x = new T[1];
-				for (size_t i = 0; i < 1; i++)
-					this->_x[i] = other[i];
+				if (this->_size > 0)
+					delete[] this->_x;
+				
+				if (other._size > 0){
+					this->_x = new T[other._size];
+					for (size_t i = 0; i < other._size; i++)
+						this->_x[i] = other._x[i];
+				}
+				this->_size = other._size;
 				return *this;
 			};
 
-			T	&operator[](const int idx) const
-			{
+			T &operator[](const size_t idx) const{
+				if (idx >= this->_size)
+					throw OutOfBoundsException();
 				return this->_x[idx];
+			}
+
+			size_t size(void) const{
+				return this->_size;
 			}
 
 };
