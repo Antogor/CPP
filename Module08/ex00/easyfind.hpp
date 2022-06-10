@@ -6,7 +6,7 @@
 # include <list>
 # include <iostream>
 # include <iterator>
-
+# include <algorithm>
 
 
 class NotFoundException: public std::exception{
@@ -18,14 +18,14 @@ class NotFoundException: public std::exception{
 };
 
 template <template <typename, typename> class  T>
-int easyfind(T<int, std::allocator<int>> &container, int n){
+typename T<int, std::allocator<int>>::iterator 
+easyfind(T<int, std::allocator<int>> &container, int n){
 		
 		typename T<int, std::allocator<int>>::iterator it;
 		
-		for (it = container.begin(); it != container.end(); it++){
-			if (*it == n)
-				return *it;
-		}
+		it = std::find(container.begin(), container.end(), n);
+		if (it != container.end())
+			return it;
 		throw NotFoundException();
 }
 

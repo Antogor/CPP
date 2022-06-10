@@ -5,7 +5,6 @@ int main (){
 	
 		std::list<int> lst;
 		std::vector<int> vec;
-		int result;
 		std::string textResult;
 
 		textResult = "Number found ";
@@ -19,10 +18,8 @@ int main (){
 
 
 		try{
-			result = easyfind(lst, 3);
-			std::cout << "LIST: " << textResult << result << std::endl;
-			result = easyfind(vec, 24);
-			std::cout << "VECTOR: " << textResult << result << std::endl;
+			std::cout << "LIST: " << textResult << *easyfind(lst, 3) << std::endl;
+			std::cout << "VECTOR: " << textResult << *easyfind(vec, 24) << std::endl;
 		} catch(NotFoundException &e){
 			std::cerr << e.what() << std::endl;
 		}
