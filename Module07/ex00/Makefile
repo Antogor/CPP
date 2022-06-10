@@ -1,6 +1,8 @@
 NAME = template_functions
 
-FLAGS = clang++ -Wall -Wextra -Werror
+CXX = clang++
+
+CXXFLAGS = -Wall -Wextra -Werror
 
 INCLUDES = *.hpp
 
@@ -11,7 +13,7 @@ OBJ = $(CLASSES:.cpp=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ) $(INCLUDES)
-	@$(FLAGS) $(CLASSES) -o $(NAME)
+	@$(CXX) $(CXXFLAGS) $(CLASSES) -o $(NAME)
 
 clean:
 	@rm -f $(OBJ)

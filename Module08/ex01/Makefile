@@ -1,8 +1,10 @@
-NAME = spand
+NAME = span
 
-FLAGS = clang++ -Wall -Wextra -Werror
+CXX = clang++
 
-INCLUDES = *.hpp
+CXXFLAGS = -Wall -Wextra -Werror
+
+INCLUDES = Span.hpp
 
 CLASSES = Span.cpp main.cpp
 
@@ -11,7 +13,7 @@ OBJ = $(CLASSES:.cpp=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ) $(INCLUDES)
-	@$(FLAGS) $(CLASSES) -o $(NAME)
+	@$(CXX) $(CXXFLAGS) $(CLASSES) -o $(NAME)
 
 clean:
 	@rm -f $(OBJ)

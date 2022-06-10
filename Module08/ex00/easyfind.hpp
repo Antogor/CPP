@@ -18,10 +18,10 @@ class NotFoundException: public std::exception{
 };
 
 template <template <typename, typename> class  T>
-typename T<int, std::allocator<int>>::iterator 
-easyfind(T<int, std::allocator<int>> &container, int n){
+typename T<int, std::allocator<int> >::iterator 
+easyfind(T<int, std::allocator<int> > &container, int n){
 		
-		typename T<int, std::allocator<int>>::iterator it;
+		typename T<int, std::allocator<int> >::iterator it;
 		
 		it = std::find(container.begin(), container.end(), n);
 		if (it != container.end())

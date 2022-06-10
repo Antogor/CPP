@@ -33,6 +33,9 @@ class Span
 					virtual const char * what() const throw();
 			};
 
+			unsigned int getNumber() const;
+			std::vector<unsigned int> getContainer() const;
+
 };
 
 	std::ostream &operator<<(std::ostream &out, Span const &other);

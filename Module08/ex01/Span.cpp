@@ -8,11 +8,13 @@ Span::~Span(){
 }
 
 Span::Span(Span const &other){
-	other.longestSpan();
+	this->n = other.n;
+	this->vec = other.vec;
 }
 
 Span &Span::operator=(Span const &other){
-	other.longestSpan();
+	this->n = other.n;
+	this->vec = other.vec;
 
 	return *this;
 }
@@ -44,9 +46,23 @@ const char *Span::ExecutionException::what() const throw(){
 	return "ExecutionException: there are none or one number stored";
 }
 
+unsigned int Span::getNumber() const{
+	return this->n;
+}
+
+std::vector<unsigned int> Span::getContainer() const {
+	return this->vec;
+}
+
 
 std::ostream &operator<<(std::ostream &out, Span const &other){
-	out << other.longestSpan();
+	std::vector<unsigned int> v = other.getContainer();
+
+	out << "Container with size " << other.getNumber() << "\nValues:" << std::endl;
+
+	for (std::vector<unsigned int>::iterator i = v.begin(); i != v.end(); i++){
+		out << *i << std::endl;
+	}
 	return out;
 }
 
