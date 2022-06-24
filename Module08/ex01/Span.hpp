@@ -23,6 +23,14 @@ class Span
 			unsigned int shortestSpan() const;
 			unsigned int longestSpan() const;
 
+			template < typename T >
+			void addNumber(T const &begin, T const &end){
+				if (end - begin <= this->n)
+					std::copy(begin, end, std::back_inserter(this->vec));
+				else
+					throw FillException();
+			}
+
 			class FillException: public std::exception{
 				public:
 					virtual const char * what() const throw();
