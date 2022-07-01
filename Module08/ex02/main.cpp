@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 20:00:32 by agarzon-          #+#    #+#             */
-/*   Updated: 2022/07/01 17:39:09 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/07/01 17:53:33 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,12 @@ int main(){
 	mstack.push(0);
 	std::cout << "Mutanstack total size: " << mstack.size() << std::endl;
 	
+	std::cout << "\nCREATING STACK FROM MUTANTSTACK:" << std::endl;
+	std::stack<int> s(mstack);
+	std::cout << "42 number added to stack" << std::endl;
+	s.push(42);
+	std::cout << "Stack size: " << s.size() << std::endl;
+	
 	MutantStack<int>::iterator it = mstack.begin();
 	MutantStack<int>::iterator ite = mstack.end();
 	
@@ -40,12 +46,6 @@ int main(){
 		std::cout << *it << std::endl;
 		++it;
 	}
-	
-	std::cout << "\nCREATING STACK FROM MUTANTSTACK:" << std::endl;
-	std::stack<int> s(mstack);
-	std::cout << "42 number added to stack" << std::endl;
-	s.push(42);
-	std::cout << "Stack size: " << s.size() << std::endl;
 	
 	std::cout << "\nCONST_ITERATOR:" << std::endl;
 	MutantStack<int>::const_iterator cit = mstack.cbegin();
@@ -77,56 +77,51 @@ int main(){
 	std::cout << "\n--------LIST--------:" << std::endl;
 	std::list<int> mslist;
 	mslist.push_back(5);
-	mslist.push_back(17);
-	std::cout << "First List number: " << mslist.back() << std::endl;
-
-	mslist.pop();
-	std::cout << "List size after pop: " << mslist.size() << std::endl;
-	
 	mslist.push_back(3);
 	mslist.push_back(5);
 	mslist.push_back(737);
 	mslist.push_back(0);
+	
 	std::cout << "List total size: " << mslist.size() << std::endl;
 	
-	std::list<int>::iterator it = mslist.begin();
-	std::list<int>::iterator ite = mslist.end();
+	std::list<int>::iterator lit = mslist.begin();
+	std::list<int>::iterator lite = mslist.end();
 	
-	++it;
-	--it;
+	++lit;
+	--lit;
 	
 	std::cout << "\nLIST ITERATOR:" << std::endl;
-	while (it != ite)
+	while (lit != lite)
 	{
-		std::cout << *it << std::endl;
-		++it;
+		std::cout << *lit << std::endl;
+		++lit;
 	}
 	
 	std::cout << "\nLIST CONST_ITERATOR:" << std::endl;
-	std::list<int>::const_iterator cit = mslist.cbegin();
-	std::list<int>::const_iterator cite = mslist.cend();
-	while (cit != cite)
+	std::list<int>::const_iterator clit = mslist.cbegin();
+	std::list<int>::const_iterator clite = mslist.cend();
+	while (clit != clite)
 	{
-		std::cout << *cit << std::endl;
-		++cit;
+		std::cout << *clit << std::endl;
+		++clit;
 	}
 	
 	std::cout << "\nLIST REVERSE_ITERATOR:" << std::endl;
-	std::list<int>::reverse_iterator rit = mslist.rbegin();
-	std::list<int>::reverse_iterator rite = mslist.rend();
-	while (rit != rite)
+	std::list<int>::reverse_iterator rlit = mslist.rbegin();
+	std::list<int>::reverse_iterator rlite = mslist.rend();
+	while (rlit != rlite)
 	{
-		std::cout << *rit << std::endl;
-		++rit;
+		std::cout << *rlit << std::endl;
+		++rlit;
 	}
 	
 	std::cout << "\nLIST CONST_REVERSE_ITERATOR:" << std::endl;
-	std::list<int>::const_reverse_iterator crit = mslist.crbegin();
-	std::list<int>::const_reverse_iterator crite = mslist.crend();
-	while (crit != crite)
+	std::list<int>::const_reverse_iterator crlit = mslist.crbegin();
+	std::list<int>::const_reverse_iterator crlite = mslist.crend();
+	while (crlit != crlite)
 	{
-		std::cout << *crit << std::endl;
-		++crit;
+		std::cout << *crlit << std::endl;
+		++crlit;
 	}
 	return 0;
 }
